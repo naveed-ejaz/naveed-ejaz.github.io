@@ -1,9 +1,11 @@
 ---
-layout: single
 title: "Contact"
 permalink: /contact/
-author_profile: true
 ---
 
-You can reach me at: **naveed3797@gmail.com**  
-[LinkedIn](https://www.linkedin.com/in/naveed-ejaz/)
+## Contact
+
+You can reach me via:
+
+- **Email**: naveed3797@gmail.com  
+- **LinkedIn**: [Naveed Ejaz](https://www.linkedin.com/in/naveed-ejaz/)
