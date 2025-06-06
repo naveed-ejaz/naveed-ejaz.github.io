@@ -1,13 +1,18 @@
 title: "Naveed Ejaz"
 email: naveed3797@gmail.com
 description: >-
-  Academic website of Dr. Naveed Ejaz, Research Fellow at Queen’s University.
+  Academic website of Dr. Naveed Ejaz, Research Fellow at Queen's University.
 baseurl: "" # leave empty
 url: "https://naveed-ejaz.github.io" # no trailing slash
 
 # Theme
 remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: default
+
+# Site Author
+author:
+  name: "Dr. Naveed Ejaz"
+  email: "naveed3797@gmail.com"
 
 # Author info
 github_username: naveed-ejaz
@@ -32,17 +37,24 @@ collections:
     output: true
     permalink: /:categories/:title/
 
-# Navigation menu links
-navigation:
-  - title: "Home"
-    url: /
-  - title: "Research"
-    url: /research/
-  - title: "Contact"
-    url: /contact/
+# Defaults for pages
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
-# Header menu (what appears at the top)
-header_pages:
-  - index.md
-  - _pages/research.md
-  - _pages/contact.md
+# Navigation menu - this is the correct format for Minimal Mistakes
+navigation:
+  main:
+    - title: "Home"
+      url: /
+    - title: "Research"
+      url: /research/
+    - title: "Contact"
+      url: /contact/
+
+# Remove header_pages - not used by Minimal Mistakes
