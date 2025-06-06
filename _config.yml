@@ -4,7 +4,7 @@ description: >-
   Academic website of Dr. Naveed Ejaz, Research Fellow at Queen’s University.
 baseurl: ""
 url: "https://naveed-ejaz.github.io"
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
 minimal_mistakes_skin: default
 github_username: naveed-ejaz
 repository: naveed-ejaz/naveed-ejaz.github.io
