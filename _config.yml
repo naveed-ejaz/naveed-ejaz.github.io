@@ -1,13 +1,19 @@
 title: "Naveed Ejaz"
-email: "naveed3797@gmail.com"
-description: "Academic website of Dr. Naveed Ejaz, Research Fellow at Queen’s University."
-baseurl: ""
-url: "https://naveed-ejaz.github.io"
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"
-github_username: "naveed-ejaz"
-repository: "naveed-ejaz/naveed-ejaz.github.io"
+email: naveed3797@gmail.com
+description: >-
+  Academic website of Dr. Naveed Ejaz, Research Fellow at Queen’s University.
+baseurl: "" # leave empty
+url: "https://naveed-ejaz.github.io" # no trailing slash
 
+# Theme
+remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: default
+
+# Author info
+github_username: naveed-ejaz
+repository: naveed-ejaz/naveed-ejaz.github.io
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -16,19 +22,27 @@ plugins:
   - jekyll-paginate
   - jekyll-include-cache
 
+# Include custom folders
 include:
-  - "_pages"
+  - _pages
 
+# Collections (for future blog or research posts)
 collections:
   posts:
     output: true
     permalink: /:categories/:title/
 
-# Navigation links
-nav:
+# Navigation menu links
+navigation:
   - title: "Home"
     url: /
   - title: "Research"
     url: /research/
   - title: "Contact"
     url: /contact/
+
+# Header menu (what appears at the top)
+header_pages:
+  - index.md
+  - _pages/research.md
+  - _pages/contact.md
