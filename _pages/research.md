@@ -1,12 +1,13 @@
 ---
-layout: single
-title: "Research Interests"
+title: "Research"
 permalink: /research/
-author_profile: true
 ---
 
-- Artificial Intelligence for smart infrastructure and public services  
-- Climate resilience using satellite and weather data  
-- Visual attention models and video understanding  
-- AI applications in healthcare and immigration  
-- Data-driven public policy systems
+## Research
+
+Here are some of the areas I am working on:
+
+- Artificial Intelligence in Healthcare
+- Visual Attention & Keyframe Extraction
+- Climate Adaptation and Infrastructure
+- Immigrant Decision Support Systems
