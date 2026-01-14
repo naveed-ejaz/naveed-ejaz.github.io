@@ -1,123 +1,228 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Naveed Ejaz | Ulster University</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dr Naveed Ejaz</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Clean font (no build tools needed) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <style>
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --bg1:#f6f9ff;
+      --bg2:#fbf7ff;
+      --link:#1d4ed8;
+    }
 
-  <body>
-    <!-- Top Navigation -->
-    <header class="site-header">
-      <nav class="top-nav" aria-label="Primary">
-        <a class="nav-link" href="#home">HOME</a>
-        <a class="nav-link" href="#research">RESEARCH</a>
-        <a class="nav-link" href="#publications">PUBLICATIONS</a>
-        <a class="nav-link" href="#teaching">TEACHING</a>
-        <a class="nav-link" href="#students">STUDENTS</a>
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 600px at 20% 0%, var(--bg1), transparent 60%),
+                  radial-gradient(1200px 600px at 80% 10%, var(--bg2), transparent 55%),
+                  #ffffff;
+    }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px 60px;
+    }
+
+    /* minimal top nav (optional; delete if you want even more minimal) */
+    .top{
+      display:flex;
+      justify-content: space-between;
+      align-items:center;
+      margin-bottom: 18px;
+    }
+    .top .site{
+      font-weight:700;
+      letter-spacing:0.02em;
+    }
+    .top nav a{
+      margin-left: 14px;
+      color: var(--muted);
+      font-weight:600;
+      font-size: 0.95rem;
+    }
+    .top nav a:hover{ color: var(--ink); text-decoration:none; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 42px;
+      align-items:start;
+      padding-top: 22px;
+    }
+
+    /* left */
+    .name{
+      font-size: 2.35rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 8px 0;
+    }
+    .subtitle{
+      margin: 0 0 4px 0;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .subtitle2{
+      margin: 0 0 18px 0;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .photo{
+      width: 260px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow:hidden;
+      background: var(--card);
+      box-shadow: 0 10px 24px rgba(2,6,23,0.06);
+      margin: 18px 0 18px;
+    }
+    .photo img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .role{
+      margin-top: 6px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .role .muted{ color: var(--muted); }
+
+    /* right */
+    .panel{
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 18px;
+      box-shadow: 0 10px 24px rgba(2,6,23,0.05);
+      backdrop-filter: blur(6px);
+    }
+    .panel h3{
+      margin: 0 0 10px 0;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+    .panel p{
+      margin: 4px 0;
+      line-height: 1.65;
+      color: var(--ink);
+    }
+    .panel .small{
+      color: var(--muted);
+    }
+    .links{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+    .links a{
+      display:inline-block;
+      margin-right: 10px;
+      margin-top: 6px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .links a:hover{ color: var(--ink); text-decoration:none; }
+
+    /* minimal research line */
+    .research{
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 75ch;
+    }
+
+    @media (max-width: 960px){
+      .grid{ grid-template-columns: 1fr; gap: 18px; }
+      .photo{ width: 220px; }
+      .top{ flex-direction: column; align-items:flex-start; gap: 10px; }
+      .top nav a{ margin-left:0; margin-right:14px; }
+      .name{ letter-spacing:0.09em; font-size:2.0rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="top">
+      <div class="site">Dr Naveed Ejaz</div>
+      <nav>
+        <!-- keep these if you have the pages; otherwise remove -->
+        <a href="./">Home</a>
+        <a href="./research.html">Research</a>
+        <a href="./publications.html">Publications</a>
+        <a href="./teaching.html">Teaching</a>
+        <a href="./contact.html">Contact</a>
       </nav>
-    </header>
+    </div>
 
-    <!-- Main -->
-    <main class="container" id="home">
-      <section class="two-col">
-        <!-- LEFT -->
-        <div class="left">
-          <h1 class="name">Naveed Ejaz</h1>
+    <div class="grid">
 
-          <p class="subtitle">
-            <em>Lecturer</em><br />
-            <em>School of Computing, Ulster University</em><br />
-            <em>Belfast, United Kingdom</em>
-          </p>
+      <!-- LEFT -->
+      <div>
+        <h1 class="name">Naveed Ejaz</h1>
 
-          <img
-            src="assets/images/naveed.jpg"
-            alt="Naveed Ejaz"
-            class="profile-image"
-          />
+        <p class="subtitle">Lecturer in Computer Science (Ulster University Belfast, Northern Ireland, UK)</p>
+        <p class="subtitle2">Applied Multimodal AI · Computer Vision · NLP/LLMs · Responsible AI</p>
 
-          <div class="role">
-            <div class="role-title">Research interests</div>
-            <div class="role-text">
-              Machine Learning · Deep Learning · Computer Vision · Natural Language Processing · Applied AI
-            </div>
-          </div>
-
-          <div class="role" style="margin-top: 16px;">
-            <div class="role-title">Short bio</div>
-            <div class="role-text">
-              I am a Lecturer in Computer Science at Ulster University Belfast. My research focuses on applied multimodal artificial intelligence for intelligent decision-making in healthcare, infrastructure, and societal systems, with an emphasis on real-world deployment, ethics, and impact.
-            </div>
-          </div>
-
-          <!-- Optional anchors for single-page sections -->
-          <div style="height: 18px;"></div>
-          <div id="research"></div>
-          <div id="publications"></div>
-          <div id="teaching"></div>
-          <div id="students"></div>
+        <div class="photo">
+          <!-- change filename if needed -->
+          <img src="assets/images/naveed.jpg" alt="Dr Naveed Ejaz">
         </div>
 
-        <!-- RIGHT -->
-        <aside class="right" aria-label="Contact">
-          <h2 class="panel-title">Contact Information</h2>
+        <div class="role">
+          <div><strong>Lecturer</strong></div>
+          <div class="muted">School of Computing</div>
+          <div><a href="https://www.ulster.ac.uk/" target="_blank" rel="noopener">Ulster University</a> (Belfast)</div>
 
-          <div class="contact-block">
-            <div>School of Computing</div>
-            <div>Ulster University</div>
-            <div>Belfast, United Kingdom</div>
+          <p class="research">
+            My research focuses on <strong>applied multimodal artificial intelligence</strong> for intelligent decision-making in
+            <strong>healthcare</strong>, <strong>infrastructure</strong>, and <strong>societal systems</strong>, with an emphasis on
+            <strong>real-world deployment</strong>, <strong>ethics</strong>, and <strong>impact</strong>.
+          </p>
+        </div>
+      </div>
 
-            <div class="spacer"></div>
+      <!-- RIGHT -->
+      <div class="panel">
+        <h3>Contact Information</h3>
+        <p>School of Computing</p>
+        <p>Ulster University Belfast</p>
+        <p class="small">Belfast, Northern Ireland (UK)</p>
+        <p>Email: <a href="mailto:n.ejaz@ulster.ac.uk">n.ejaz@ulster.ac.uk</a></p>
 
-            <div><strong>Email:</strong> <a class="inline-link" href="mailto:n.ejaz@ulster.ac.uk">n.ejaz@ulster.ac.uk</a></div>
-            <div><strong>Phone:</strong> <a class="inline-link" href="tel:+442895367152">+44 28 9536 7152</a></div>
-          </div>
+        <div class="links">
+          <h3>Related links</h3>
+          <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/naveed-ejaz" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
 
-          <h3 class="panel-subtitle">Profiles</h3>
-
-          <div class="contact-block">
-            <div>
-              <a class="inline-link" href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                Google Scholar
-              </a>
-            </div>
-            <div>
-              <a class="inline-link" href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          <h3 class="panel-subtitle">Quick links</h3>
-          <div class="contact-block">
-            <ul class="bullets">
-              <li><a class="inline-link" href="#research">Research overview</a></li>
-              <li><a class="inline-link" href="#publications">Selected publications</a></li>
-              <li><a class="inline-link" href="#teaching">Teaching</a></li>
-              <li><a class="inline-link" href="#students">Prospective students</a></li>
-            </ul>
-          </div>
-
-          <h3 class="panel-subtitle">Prospective students</h3>
-          <div class="contact-block">
-            <div>
-              I welcome enquiries from prospective MSc/PhD students interested in applied AI, deep learning,
-              computer vision, and NLP. Please email with a short description of your interests and a CV.
-            </div>
-          </div>
-        </aside>
-      </section>
-    </main>
-  </body>
+    </div>
+  </div>
+</body>
 </html>
