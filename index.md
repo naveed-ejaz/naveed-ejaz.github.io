@@ -1,12 +1,11 @@
 ---
-layout: home
-author_profile: false
+layout: single
 title: " "
 classes: wide
+author_profile: false
 ---
 
 <style>
-/* Card layout */
 .hero-card{
   display:grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -19,7 +18,6 @@ classes: wide
   margin: 0.6rem 0 1.4rem 0;
 }
 
-/* Typography (smaller + cleaner) */
 .hero-kicker{
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -43,7 +41,6 @@ classes: wide
   max-width: 66ch;
 }
 
-/* Meta pills */
 .hero-meta{
   display:flex;
   gap:0.75rem;
@@ -71,7 +68,6 @@ classes: wide
   color:#0f172a;
 }
 
-/* Buttons */
 .hero-links{
   display:flex;
   gap:0.55rem;
@@ -98,7 +94,6 @@ classes: wide
   color:#1e293b !important;
 }
 
-/* Right panel */
 .hero-panel{
   background:white;
   border-radius:16px;
@@ -129,10 +124,36 @@ classes: wide
   margin:1.5rem 0;
 }
 
-/* Responsive */
+.highlights{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.9rem;
+  margin: 1rem 0 0.25rem 0;
+}
+
+.hl-card{
+  background: white;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:0.95rem 1rem;
+}
+
+.hl-card h4{
+  margin:0 0 0.35rem 0;
+  font-size:1.0rem;
+}
+
+.hl-card p{
+  margin:0;
+  font-size:0.94rem;
+  line-height:1.5;
+  color:#334155;
+}
+
 @media(max-width:900px){
   .hero-card{ grid-template-columns:1fr; }
   .meta-item{ min-width:100%; }
+  .highlights{ grid-template-columns: 1fr; }
 }
 </style>
 
@@ -181,6 +202,21 @@ classes: wide
     </ul>
   </div>
 
+</div>
+
+<div class="highlights">
+  <div class="hl-card">
+    <h4>Industry & public-sector impact</h4>
+    <p>Applied AI systems deployed for healthcare workflows, infrastructure monitoring, and decision support.</p>
+  </div>
+  <div class="hl-card">
+    <h4>Students & supervision</h4>
+    <p>Open to PhD/MSc supervision in multimodal AI, computer vision, NLP/LLMs, and responsible AI.</p>
+  </div>
+  <div class="hl-card">
+    <h4>Collaboration</h4>
+    <p>Interested in partnerships with healthcare, local government, and industry in Northern Ireland and the UK.</p>
+  </div>
 </div>
 
 <hr class="soft-rule"/>
