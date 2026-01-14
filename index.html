@@ -13,11 +13,14 @@
     :root{
       --ink:#0f172a;
       --muted:#475569;
+      --muted2:#64748b;
       --line:#e5e7eb;
       --card:#ffffff;
       --bg1:#f6f9ff;
       --bg2:#fbf7ff;
       --link:#1d4ed8;
+      --chip:#f1f5f9;
+      --shadow: 0 10px 24px rgba(2,6,23,0.06);
     }
 
     *{ box-sizing:border-box; }
@@ -37,10 +40,10 @@
     .wrap{
       max-width: 1100px;
       margin: 0 auto;
-      padding: 36px 20px 60px;
+      padding: 34px 20px 60px;
     }
 
-    /* Top navigation (no Contact tab) */
+    /* Top navigation */
     .top{
       display:flex;
       justify-content:flex-end;
@@ -59,39 +62,80 @@
 
     .grid{
       display:grid;
-      grid-template-columns: 2.2fr 1fr;
-      gap: 42px;
+      grid-template-columns: 2.1fr 1fr;
+      gap: 44px;
       align-items:start;
     }
 
-    /* Left */
-    .name{
-      font-size: 2.4rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin: 0 0 10px 0;
-    }
-    .subtitle{
-      margin: 0 0 6px 0;
-      font-style: italic;
-      line-height: 1.55;
-    }
-    .subtitle2{
-      margin: 0 0 20px 0;
-      font-style: italic;
-      color: var(--muted);
-      line-height: 1.55;
+    /* Hero / header block (improved) */
+    .hero{
+      margin-bottom: 18px;
     }
 
+    .name{
+      font-size: 2.55rem;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin: 0 0 12px 0;
+      line-height: 1.1;
+    }
+
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 14px;
+      align-items:center;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .meta .item{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .dot{
+      width: 6px;
+      height: 6px;
+      border-radius: 99px;
+      background: #cbd5e1;
+      display:inline-block;
+      transform: translateY(1px);
+    }
+    .meta strong{
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin: 6px 0 18px;
+    }
+    .chip{
+      background: var(--chip);
+      border: 1px solid #e2e8f0;
+      color: #1f2937;
+      font-weight: 650;
+      font-size: 0.92rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Photo */
     .photo{
-      width: 260px;
+      width: 280px;
       border: 1px solid var(--line);
-      border-radius: 6px;
+      border-radius: 10px;
       overflow:hidden;
       background: var(--card);
-      box-shadow: 0 10px 24px rgba(2,6,23,0.06);
-      margin: 18px 0;
+      box-shadow: var(--shadow);
+      margin: 10px 0 18px;
     }
     .photo img{
       width:100%;
@@ -99,46 +143,47 @@
       display:block;
     }
 
-    .role{
-      line-height: 1.75;
-    }
-
-    .research{
-      margin-top: 12px;
+    /* Bio */
+    .bio{
+      margin-top: 6px;
       color: var(--muted);
-      line-height: 1.65;
-      max-width: 75ch;
+      font-size: 1.03rem;
+      line-height: 1.8;
+      max-width: 78ch;
     }
+    .bio strong{ color: var(--ink); }
 
     /* Right panel */
     .panel{
-      background: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.80);
       border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 10px 24px rgba(2,6,23,0.05);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--shadow);
       backdrop-filter: blur(6px);
     }
     .panel h3{
-      margin: 0 0 12px 0;
-      font-size: 1.05rem;
-      font-weight: 800;
+      margin: 0 0 14px 0;
+      font-size: 1.08rem;
+      font-weight: 850;
     }
     .panel p{
-      margin: 4px 0;
+      margin: 7px 0;
       line-height: 1.65;
+      font-size: 1rem;
     }
     .panel .small{ color: var(--muted); }
 
     .links{
-      margin-top: 16px;
-      padding-top: 14px;
+      margin-top: 18px;
+      padding-top: 16px;
       border-top: 1px solid var(--line);
     }
     .links a{
       display:inline-block;
       margin-right: 14px;
-      font-weight: 700;
+      margin-top: 8px;
+      font-weight: 750;
       color: var(--muted);
     }
     .links a:hover{
@@ -148,8 +193,9 @@
 
     @media (max-width: 960px){
       .grid{ grid-template-columns: 1fr; gap: 18px; }
-      .photo{ width: 220px; }
-      .name{ letter-spacing:0.1em; font-size:2.0rem; }
+      .photo{ width: 240px; }
+      .name{ letter-spacing:0.1em; font-size:2.05rem; }
+      .bio{ font-size: 1rem; }
     }
   </style>
 </head>
@@ -157,7 +203,7 @@
 <body>
   <div class="wrap">
 
-    <!-- TOP RIGHT NAV (no Contact) -->
+    <!-- TOP RIGHT NAV (no contact page) -->
     <div class="top">
       <nav>
         <a href="./">Home</a>
@@ -169,32 +215,41 @@
 
     <div class="grid">
 
-      <!-- LEFT (single affiliation location only) -->
+      <!-- LEFT -->
       <div>
-        <h1 class="name">Dr Naveed Ejaz</h1>
+        <!-- Improved header section -->
+        <div class="hero">
+          <h1 class="name">Dr Naveed Ejaz</h1>
 
-        <p class="subtitle">
-          Lecturer in Computer Science — School of Computing, Ulster University (Belfast, Northern Ireland, UK)
-        </p>
-        <p class="subtitle2">
-          Applied Multimodal AI · Computer Vision · NLP / LLMs · Responsible AI
-        </p>
+          <div class="meta">
+            <div class="item"><strong>Lecturer</strong> in Computer Science</div>
+            <span class="dot" aria-hidden="true"></span>
+            <div class="item">School of Computing, <a href="https://www.ulster.ac.uk/" target="_blank" rel="noopener">Ulster University</a></div>
+            <span class="dot" aria-hidden="true"></span>
+            <div class="item">Belfast, Northern Ireland (UK)</div>
+          </div>
+
+          <div class="chips" aria-label="Research areas">
+            <span class="chip">Applied Multimodal AI</span>
+            <span class="chip">Computer Vision</span>
+            <span class="chip">NLP / LLMs</span>
+            <span class="chip">Responsible AI</span>
+          </div>
+        </div>
 
         <div class="photo">
           <img src="assets/images/naveed.jpg" alt="Dr Naveed Ejaz">
         </div>
 
-        <div class="role">
-          <p class="research">
-            My research focuses on <strong>applied multimodal artificial intelligence</strong> for intelligent
-            decision-making in <strong>healthcare</strong>, <strong>infrastructure</strong>, and
-            <strong>societal systems</strong>, with an emphasis on
-            <strong>real-world deployment</strong>, <strong>ethics</strong>, and <strong>impact</strong>.
-          </p>
-        </div>
+        <p class="bio">
+          My research focuses on <strong>applied multimodal artificial intelligence</strong> for intelligent
+          decision-making in <strong>healthcare</strong>, <strong>infrastructure</strong>, and
+          <strong>societal systems</strong>, with an emphasis on <strong>real-world deployment</strong>,
+          <strong>ethics</strong>, and <strong>impact</strong>.
+        </p>
       </div>
 
-      <!-- RIGHT (contact kept, but affiliation not repeated) -->
+      <!-- RIGHT -->
       <div class="panel">
         <h3>Contact</h3>
         <p class="small">Belfast, Northern Ireland, UK</p>
