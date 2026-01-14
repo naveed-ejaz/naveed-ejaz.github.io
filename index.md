@@ -1,33 +1,25 @@
 ---
 layout: home
 author_profile: false
-title: ""
+title: " "
 classes: wide
 ---
 
 <style>
-/* Tweak overall typography for a cleaner look */
-.page__content{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-}
-
-/* Hide theme-generated page title area (some themes show it even on home) */
-.page__title, .page__hero--overlay, .page__hero, header.page__title{
-  display: none !important;
-}
-
+/* Card layout */
 .hero-card{
   display:grid;
-  grid-template-columns: 1.2fr 0.9fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap:1.1rem;
   padding:1.25rem;
   border-radius:18px;
   background: linear-gradient(135deg, #f0f7ff, #f5f3ff);
   border:1px solid #e5e7eb;
   box-shadow: 0 12px 28px rgba(0,0,0,0.07);
-  margin: 0.5rem 0 1.5rem 0;
+  margin: 0.6rem 0 1.4rem 0;
 }
 
+/* Typography (smaller + cleaner) */
 .hero-kicker{
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -37,20 +29,21 @@ classes: wide
 }
 
 .hero-title{
-  font-size:1.7rem;
+  font-size:1.55rem;
   font-weight:750;
   margin:0 0 0.45rem 0;
   color:#0f172a;
 }
 
 .hero-subtitle{
-  font-size:0.98rem;
+  font-size:0.96rem;
   line-height:1.6;
   color:#334155;
   margin:0.2rem 0 0.9rem 0;
-  max-width: 64ch;
+  max-width: 66ch;
 }
 
+/* Meta pills */
 .hero-meta{
   display:flex;
   gap:0.75rem;
@@ -78,6 +71,7 @@ classes: wide
   color:#0f172a;
 }
 
+/* Buttons */
 .hero-links{
   display:flex;
   gap:0.55rem;
@@ -88,7 +82,7 @@ classes: wide
   padding:0.5rem 0.9rem;
   border-radius:999px;
   font-weight:650;
-  font-size:0.92rem;
+  font-size:0.9rem;
   text-decoration:none !important;
   border:1px solid #c7d2fe;
 }
@@ -104,6 +98,7 @@ classes: wide
   color:#1e293b !important;
 }
 
+/* Right panel */
 .hero-panel{
   background:white;
   border-radius:16px;
@@ -123,7 +118,7 @@ classes: wide
 
 .hero-panel li{
   margin: 0.35rem 0;
-  font-size:0.95rem;
+  font-size:0.94rem;
   line-height:1.45;
 }
 
@@ -134,16 +129,7 @@ classes: wide
   margin:1.5rem 0;
 }
 
-.section-title{
-  font-size:1.25rem;
-  margin: 0 0 0.6rem 0;
-}
-
-.section-text{
-  font-size:0.98rem;
-  line-height:1.65;
-}
-
+/* Responsive */
 @media(max-width:900px){
   .hero-card{ grid-template-columns:1fr; }
   .meta-item{ min-width:100%; }
@@ -154,10 +140,10 @@ classes: wide
 
   <div>
     <div class="hero-kicker">Lecturer in Computer Science</div>
-    <div class="hero-title">Dr Naveed Ejaz</div>
+    <div class="hero-title">Applied Multimodal AI · Ulster University Belfast</div>
 
     <p class="hero-subtitle">
-      I am a <strong>Lecturer in Computer Science at Ulster University Belfast</strong>.
+      I am a Lecturer in Computer Science at <strong>Ulster University Belfast</strong>.
       My research focuses on <strong>applied multimodal artificial intelligence</strong> for
       intelligent decision-making in <strong>healthcare</strong>, <strong>infrastructure</strong>,
       and <strong>societal systems</strong>, with emphasis on <strong>real-world deployment</strong>,
@@ -166,8 +152,8 @@ classes: wide
 
     <div class="hero-meta">
       <div class="meta-item">
-        <span class="meta-label">Affiliation</span>
-        <span class="meta-value">Ulster University Belfast</span>
+        <span class="meta-label">Name</span>
+        <span class="meta-value">Dr Naveed Ejaz</span>
       </div>
       <div class="meta-item">
         <span class="meta-label">Email</span>
@@ -186,4 +172,21 @@ classes: wide
   </div>
 
   <div class="hero-panel">
-    <h3>Resear
+    <h3>Research themes</h3>
+    <ul>
+      <li><strong>AI for Health & Wellbeing</strong> — clinical decision support and privacy-aware AI</li>
+      <li><strong>AI for Smart Infrastructure & Planning</strong> — drone imagery and road monitoring</li>
+      <li><strong>Responsible AI for Safety & Society</strong> — online harms and explainable AI</li>
+      <li><strong>Multimodal & Generative AI Systems</strong> — vision–language models, RAG, edge/cloud AI</li>
+    </ul>
+  </div>
+
+</div>
+
+<hr class="soft-rule"/>
+
+## Supervision & Collaboration
+
+I welcome enquiries from prospective **PhD and MSc students** interested in applied, impact-driven AI research aligned with the themes above, including interdisciplinary projects with healthcare, engineering, and public-sector partners.
+
+Please email me with a brief description of your background and research interests.
