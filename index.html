@@ -40,6 +40,7 @@
       padding: 36px 20px 60px;
     }
 
+    /* Top navigation (no Contact tab) */
     .top{
       display:flex;
       justify-content:flex-end;
@@ -51,6 +52,10 @@
       font-weight:600;
       font-size: 0.95rem;
     }
+    .top nav a:hover{
+      color: var(--ink);
+      text-decoration:none;
+    }
 
     .grid{
       display:grid;
@@ -59,6 +64,7 @@
       align-items:start;
     }
 
+    /* Left */
     .name{
       font-size: 2.4rem;
       font-weight: 800;
@@ -96,7 +102,6 @@
     .role{
       line-height: 1.75;
     }
-    .role .muted{ color: var(--muted); }
 
     .research{
       margin-top: 12px;
@@ -105,6 +110,7 @@
       max-width: 75ch;
     }
 
+    /* Right panel */
     .panel{
       background: rgba(255,255,255,0.75);
       border: 1px solid var(--line);
@@ -135,6 +141,10 @@
       font-weight: 700;
       color: var(--muted);
     }
+    .links a:hover{
+      color: var(--ink);
+      text-decoration:none;
+    }
 
     @media (max-width: 960px){
       .grid{ grid-template-columns: 1fr; gap: 18px; }
@@ -147,24 +157,24 @@
 <body>
   <div class="wrap">
 
+    <!-- TOP RIGHT NAV (no Contact) -->
     <div class="top">
       <nav>
         <a href="./">Home</a>
         <a href="./research.html">Research</a>
         <a href="./publications.html">Publications</a>
         <a href="./teaching.html">Teaching</a>
-        <a href="./contact.html">Contact</a>
       </nav>
     </div>
 
     <div class="grid">
 
-      <!-- LEFT -->
+      <!-- LEFT (single affiliation location only) -->
       <div>
         <h1 class="name">Dr Naveed Ejaz</h1>
 
         <p class="subtitle">
-          Lecturer in Computer Science (Ulster University Belfast, Northern Ireland, UK)
+          Lecturer in Computer Science — School of Computing, Ulster University (Belfast, Northern Ireland, UK)
         </p>
         <p class="subtitle2">
           Applied Multimodal AI · Computer Vision · NLP / LLMs · Responsible AI
@@ -175,13 +185,6 @@
         </div>
 
         <div class="role">
-          <div class="muted">School of Computing</div>
-          <div>
-            <a href="https://www.ulster.ac.uk/" target="_blank" rel="noopener">
-              Ulster University
-            </a> (Belfast)
-          </div>
-
           <p class="research">
             My research focuses on <strong>applied multimodal artificial intelligence</strong> for intelligent
             decision-making in <strong>healthcare</strong>, <strong>infrastructure</strong>, and
@@ -191,19 +194,24 @@
         </div>
       </div>
 
-      <!-- RIGHT -->
+      <!-- RIGHT (contact kept, but affiliation not repeated) -->
       <div class="panel">
-        <h3>Contact Information</h3>
-        <p>School of Computing</p>
-        <p>Ulster University</p>
+        <h3>Contact</h3>
         <p class="small">Belfast, Northern Ireland, UK</p>
         <p>Email: <a href="mailto:n.ejaz@ulster.ac.uk">n.ejaz@ulster.ac.uk</a></p>
         <p>Phone: <a href="tel:+442895367152">+44 28 9536 7152</a></p>
 
         <div class="links">
-          <h3>Related links</h3>
-          <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank">LinkedIn</a>
+          <h3>Links</h3>
+          <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener">
+            Google Scholar
+          </a>
+          <a href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+          <a href="https://www.ulster.ac.uk/" target="_blank" rel="noopener">
+            Ulster University
+          </a>
         </div>
       </div>
 
