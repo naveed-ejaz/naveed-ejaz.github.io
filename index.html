@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dr Naveed Ejaz</title>
 
-  <!-- Clean font -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,50 +41,47 @@
       padding: 36px 20px 60px;
     }
 
-    /* Top bar */
+    /* Top navigation (right only) */
     .top{
       display:flex;
-      justify-content: space-between;
+      justify-content:flex-end;
       align-items:center;
-      margin-bottom: 18px;
-    }
-    .top .site{
-      font-weight:700;
-      letter-spacing:0.02em;
-      color: var(--muted);
+      margin-bottom: 26px;
     }
     .top nav a{
-      margin-left: 14px;
+      margin-left: 18px;
       color: var(--muted);
       font-weight:600;
       font-size: 0.95rem;
     }
-    .top nav a:hover{ color: var(--ink); text-decoration:none; }
+    .top nav a:hover{
+      color: var(--ink);
+      text-decoration:none;
+    }
 
     .grid{
       display:grid;
       grid-template-columns: 2.2fr 1fr;
       gap: 42px;
       align-items:start;
-      padding-top: 22px;
     }
 
     /* Left */
     .name{
-      font-size: 2.35rem;
+      font-size: 2.4rem;
       font-weight: 800;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin: 0 0 8px 0;
+      margin: 0 0 10px 0;
     }
     .subtitle{
-      margin: 0 0 4px 0;
+      margin: 0 0 6px 0;
       font-style: italic;
       color: var(--ink);
       line-height: 1.55;
     }
     .subtitle2{
-      margin: 0 0 18px 0;
+      margin: 0 0 20px 0;
       font-style: italic;
       color: var(--muted);
       line-height: 1.55;
@@ -97,7 +94,7 @@
       overflow:hidden;
       background: var(--card);
       box-shadow: 0 10px 24px rgba(2,6,23,0.06);
-      margin: 18px 0;
+      margin: 18px 0 18px;
     }
     .photo img{
       width:100%;
@@ -106,13 +103,12 @@
     }
 
     .role{
-      margin-top: 6px;
       line-height: 1.75;
     }
     .role .muted{ color: var(--muted); }
 
     .research{
-      margin-top: 10px;
+      margin-top: 12px;
       color: var(--muted);
       line-height: 1.65;
       max-width: 75ch;
@@ -123,12 +119,12 @@
       background: rgba(255,255,255,0.75);
       border: 1px solid var(--line);
       border-radius: 10px;
-      padding: 18px;
+      padding: 20px;
       box-shadow: 0 10px 24px rgba(2,6,23,0.05);
       backdrop-filter: blur(6px);
     }
     .panel h3{
-      margin: 0 0 10px 0;
+      margin: 0 0 12px 0;
       font-size: 1.05rem;
       font-weight: 800;
     }
@@ -139,24 +135,26 @@
     .panel .small{ color: var(--muted); }
 
     .links{
-      margin-top: 14px;
+      margin-top: 16px;
       padding-top: 14px;
       border-top: 1px solid var(--line);
     }
     .links a{
       display:inline-block;
-      margin-right: 12px;
+      margin-right: 14px;
       margin-top: 6px;
       font-weight: 700;
       color: var(--muted);
     }
-    .links a:hover{ color: var(--ink); text-decoration:none; }
+    .links a:hover{
+      color: var(--ink);
+      text-decoration:none;
+    }
 
     @media (max-width: 960px){
       .grid{ grid-template-columns: 1fr; gap: 18px; }
       .photo{ width: 220px; }
-      .top{ flex-direction: column; align-items:flex-start; gap: 10px; }
-      .name{ letter-spacing:0.09em; font-size:2.0rem; }
+      .name{ letter-spacing:0.1em; font-size:2.0rem; }
     }
   </style>
 </head>
@@ -164,9 +162,8 @@
 <body>
   <div class="wrap">
 
-    <!-- TOP BAR (no repeated name) -->
+    <!-- TOP RIGHT NAV -->
     <div class="top">
-      <div class="site">Ulster University · School of Computing</div>
       <nav>
         <a href="./">Home</a>
         <a href="./research.html">Research</a>
@@ -182,52 +179,4 @@
       <div>
         <h1 class="name">Dr Naveed Ejaz</h1>
 
-        <p class="subtitle">
-          Lecturer in Computer Science (Ulster University Belfast, Northern Ireland, UK)
-        </p>
-        <p class="subtitle2">
-          Applied Multimodal AI · Computer Vision · NLP / LLMs · Responsible AI
-        </p>
-
-        <div class="photo">
-          <img src="assets/images/naveed.jpg" alt="Dr Naveed Ejaz">
-        </div>
-
-        <div class="role">
-          <div><strong>Lecturer</strong></div>
-          <div class="muted">School of Computing</div>
-          <div>
-            <a href="https://www.ulster.ac.uk/" target="_blank" rel="noopener">
-              Ulster University
-            </a> (Belfast)
-          </div>
-
-          <p class="research">
-            My research focuses on <strong>applied multimodal artificial intelligence</strong> for intelligent
-            decision-making in <strong>healthcare</strong>, <strong>infrastructure</strong>, and
-            <strong>societal systems</strong>, with an emphasis on
-            <strong>real-world deployment</strong>, <strong>ethics</strong>, and <strong>impact</strong>.
-          </p>
-        </div>
-      </div>
-
-      <!-- RIGHT -->
-      <div class="panel">
-        <h3>Contact Information</h3>
-        <p>School of Computing</p>
-        <p>Ulster University</p>
-        <p class="small">Belfast, Northern Ireland, UK</p>
-        <p>Email: <a href="mailto:n.ejaz@ulster.ac.uk">n.ejaz@ulster.ac.uk</a></p>
-        <p>Phone: <a href="tel:+442895367152">+44 28 9536 7152</a></p>
-
-        <div class="links">
-          <h3>Related links</h3>
-          <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</body>
-</html>
+        <p class="subt
