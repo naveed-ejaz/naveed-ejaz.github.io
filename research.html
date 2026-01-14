@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research | Dr Naveed Ejaz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --muted2:#64748b;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --bg1:#f6f9ff;
+      --bg2:#fbf7ff;
+      --link:#1d4ed8;
+      --chip:#f1f5f9;
+      --shadow: 0 10px 24px rgba(2,6,23,0.06);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, var(--bg1), transparent 60%),
+        radial-gradient(1200px 600px at 80% 10%, var(--bg2), transparent 55%),
+        #ffffff;
+    }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 34px 20px 70px;
+    }
+
+    /* Top navigation */
+    .top{
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom: 26px;
+    }
+    .top nav a{
+      margin-left: 18px;
+      color: var(--muted);
+      font-weight:600;
+      font-size: 0.95rem;
+    }
+    .top nav a:hover{ color: var(--ink); text-decoration:none; }
+    .top nav a.active{ color: var(--ink); }
+
+    /* Page header */
+    .page-title{
+      margin: 0 0 10px 0;
+      font-size: 2.1rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+    }
+    .lede{
+      margin: 0 0 18px 0;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 85ch;
+      font-size: 1.05rem;
+    }
+
+    /* Chips */
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      margin: 12px 0 24px;
+    }
+    .chip{
+      background: var(--chip);
+      border: 1px solid #e2e8f0;
+      color: #1f2937;
+      font-weight: 650;
+      font-size: 0.92rem;
+      padding: 8px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 2.1fr 1fr;
+      gap: 28px;
+      align-items:start;
+      margin-top: 18px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.86);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .card h2{
+      margin: 0 0 10px 0;
+      font-size: 1.2rem;
+      font-weight: 850;
+    }
+
+    .section{
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .area{
+      margin-top: 16px;
+    }
+    .area h3{
+      margin: 0 0 6px 0;
+      font-size: 1.05rem;
+      font-weight: 850;
+    }
+    .area p{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+
+    /* Lists */
+    ul{
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+
+    /* Sidebar */
+    .side h3{
+      margin: 0 0 10px 0;
+      font-size: 1.05rem;
+      font-weight: 850;
+    }
+    .side p{
+      margin: 8px 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .side a{
+      font-weight: 750;
+      color: var(--muted);
+      display: inline-block;
+      margin: 6px 0;
+    }
+    .side a:hover{ color: var(--ink); text-decoration:none; }
+
+    .mini{
+      font-size: 0.98rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px){
+      .grid{ grid-template-columns: 1fr; }
+      .page-title{ font-size: 1.75rem; }
+      .lede{ font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOP RIGHT NAV -->
+    <div class="top">
+      <nav aria-label="Primary">
+        <a href="./">Home</a>
+        <a class="active" href="./research.html">Research</a>
+        <a href="./publications.html">Publications</a>
+        <a href="./teaching.html">Teaching</a>
+      </nav>
+    </div>
+
+    <!-- Page header -->
+    <h1 class="page-title">Research</h1>
+    <p class="lede">
+      My research focuses on <strong>applied multimodal artificial intelligence for intelligent decision-making in real-world systems</strong>.
+      I develop AI methods that integrate <strong>visual, textual, temporal, and structured data</strong> to support evidence-based decisions in
+      <strong>healthcare</strong>, <strong>infrastructure</strong>, and <strong>societal systems</strong>. A central aim of my work is to ensure AI
+      solutions are <strong>deployable, trustworthy, and impactful</strong>, rather than purely theoretical.
+    </p>
+
+    <div class="chips" aria-label="Research highlights">
+      <span class="chip">Multimodal AI</span>
+      <span class="chip">Vision–Language</span>
+      <span class="chip">NLP / LLMs</span>
+      <span class="chip">Geospatial & CV</span>
+      <span class="chip">Responsible AI</span>
+      <span class="chip">Real-world deployment</span>
+    </div>
+
+    <div class="grid">
+      <!-- MAIN -->
+      <div class="card">
+        <h2>Key Research Areas</h2>
+
+        <div class="area">
+          <h3>AI for Health &amp; Wellbeing</h3>
+          <p>
+            I develop machine learning and multimodal AI systems for <strong>clinical decision support</strong>,
+            <strong>risk assessment</strong>, and <strong>automation of healthcare workflows</strong>. This includes
+            the use of <strong>large language models</strong> for clinical documentation and information extraction,
+            with attention to <strong>privacy</strong>, <strong>robustness</strong>, and <strong>safe deployment</strong>
+            in real healthcare settings.
+          </p>
+        </div>
+
+        <div class="area">
+          <h3>AI for Smart Infrastructure &amp; Planning</h3>
+          <p>
+            My work applies <strong>computer vision and geospatial AI</strong> to the monitoring and analysis of the built environment.
+            Using <strong>drone and aerial imagery</strong> and temporal data, I develop methods for <strong>road condition assessment</strong>,
+            <strong>infrastructure monitoring</strong>, and <strong>urban and environmental planning</strong>, supporting decision-making in
+            public-sector contexts.
+          </p>
+        </div>
+
+        <div class="area">
+          <h3>Responsible AI for Safety &amp; Society</h3>
+          <p>
+            I investigate AI approaches for <strong>online safety</strong>, <strong>harm detection</strong>, and ethical AI deployment, including
+            <strong>violence and cyberbullying detection</strong> and <strong>explainable AI</strong>. This work focuses on aligning AI systems with
+            <strong>societal values</strong>, <strong>legal frameworks</strong>, and <strong>ethical principles</strong>, particularly in safety-critical
+            and public-sector applications.
+          </p>
+        </div>
+
+        <div class="area">
+          <h3>Multimodal &amp; Generative AI Systems</h3>
+          <p>
+            Across applications, I study <strong>multimodal and generative AI</strong>, including <strong>vision–language models</strong>,
+            <strong>retrieval-augmented generation (RAG)</strong>, and hybrid <strong>edge–cloud AI systems</strong>.
+            These methods enable AI systems to reason across multiple data sources and underpin my applied research.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Methods &amp; Expertise</h2>
+          <ul>
+            <li>Machine learning and deep learning</li>
+            <li>Computer vision and image analysis</li>
+            <li>Natural language processing and large language models</li>
+            <li>Multimodal data fusion</li>
+            <li>Explainable and responsible AI</li>
+            <li>Real-world AI deployment and evaluation</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <h2>Impact &amp; Future Direction</h2>
+          <p class="lede" style="margin:0;">
+            My work has led to AI systems <strong>deployed or evaluated in real-world settings</strong>, including healthcare services,
+            public-sector organisations, and industry partners. Over the next five years, my research will strengthen the foundations and
+            applications of <strong>applied multimodal AI</strong> in areas of strategic importance to the <strong>UK and Northern Ireland</strong>,
+            particularly <strong>healthcare transformation</strong>, <strong>smart infrastructure</strong>, and <strong>responsible AI for society</strong>,
+            through interdisciplinary collaboration and impact-driven research.
+          </p>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="card side">
+        <h3>Quick links</h3>
+        <a href="./publications.html">Publications →</a><br />
+        <a href="./teaching.html">Teaching →</a>
+
+        <div class="section">
+          <h3>Profiles</h3>
+          <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><br />
+          <a href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <div class="section">
+          <h3 class="mini">Prospective students</h3>
+          <p class="mini">
+            I welcome enquiries from prospective MSc/PhD students interested in multimodal AI, computer vision, NLP/LLMs, and responsible AI.
+          </p>
+          <p class="mini">
+            Email: <a href="mailto:n.ejaz@ulster.ac.uk">n.ejaz@ulster.ac.uk</a>
+          </p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>
