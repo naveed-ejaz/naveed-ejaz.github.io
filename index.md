@@ -6,128 +6,121 @@ author_profile: false
 ---
 
 <style>
-/* Simple academic layout (photo left, info right) */
-.simple-home{
-  display:flex;
-  gap: 2.2rem;
-  align-items:flex-start;
-  margin-top: 1.2rem;
+/* --- Simple academic layout (Miguel-like) --- */
+.acad{
+  display:grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 3rem;
+  align-items:start;
+  margin-top: 1.6rem;
 }
 
-/* Photo block */
-.simple-photo{
-  width: 260px;
-  flex: 0 0 260px;
+/* Left column */
+.name{
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.4rem 0;
 }
-.simple-photo img{
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
+
+.sub{
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.55;
+  margin: 0.1rem 0;
+  color: #111827;
+}
+
+.photo{
+  margin-top: 1.1rem;
+  width: 260px;
   border: 1px solid #e5e7eb;
 }
 
-/* Right content */
-.simple-content{
-  flex: 1;
-  min-width: 280px;
-}
-.name{
-  font-size: 2.0rem;
-  font-weight: 800;
-  margin: 0 0 0.35rem 0;
-}
-.tagline{
+.roleblock{
+  margin-top: 1.3rem;
   font-size: 1.05rem;
-  color: #334155;
-  margin: 0 0 1rem 0;
-  line-height: 1.5;
-}
-.role{
-  font-size: 1.05rem;
-  margin: 0.3rem 0 0.6rem 0;
-}
-.links a{
-  margin-right: 0.8rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-.panel{
-  margin-top: 1.1rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid #e5e7eb;
-}
-.panel h3{
-  margin: 0 0 0.5rem 0;
-  font-size: 1.05rem;
-}
-.panel ul{
-  margin: 0.2rem 0 0 1.1rem;
-}
-.panel li{
-  margin: 0.35rem 0;
+  line-height: 1.7;
 }
 
-/* Mobile */
-@media (max-width: 900px){
-  .simple-home{
-    flex-direction: column;
-    gap: 1.2rem;
+.roleblock a{
+  text-decoration: underline;
+}
+
+/* Right column */
+.right h3{
+  font-size: 1.1rem;
+  margin: 0 0 0.6rem 0;
+  font-weight: 800;
+}
+
+.right p{
+  margin: 0.15rem 0;
+  line-height: 1.6;
+}
+
+.links{
+  margin-top: 1.1rem;
+}
+
+.links h3{
+  margin-top: 1.3rem;
+}
+
+.links a{
+  font-weight: 700;
+  margin-right: 0.7rem;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 1000px){
+  .acad{
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
   }
-  .simple-photo{
+  .photo{
     width: 220px;
-    flex: 0 0 auto;
   }
   .name{
-    font-size: 1.7rem;
+    font-size: 2.1rem;
+    letter-spacing: 0.08em;
   }
 }
 </style>
 
-<div class="simple-home">
+<div class="acad">
 
-  <div class="simple-photo">
-    <img src="{{ '/assets/images/naveed.jpg' | relative_url }}" alt="Dr Naveed Ejaz">
+  <!-- LEFT -->
+  <div>
+    <div class="name">NAVEED EJAZ</div>
+
+    <div class="sub">Lecturer in Computer Science (Ulster University Belfast, Northern Ireland, UK)</div>
+    <div class="sub">Applied Multimodal AI · Computer Vision · NLP/LLMs · Responsible AI</div>
+
+    <img class="photo" src="{{ '/assets/images/naveed.jpg' | relative_url }}" alt="Dr Naveed Ejaz">
+
+    <div class="roleblock">
+      Lecturer<br/>
+      <a href="https://www.ulster.ac.uk/" target="_blank" rel="noopener">Ulster University</a> (Belfast)
+    </div>
   </div>
 
-  <div class="simple-content">
-    <div class="name">Dr Naveed Ejaz</div>
-
-    <div class="role">
-      <strong>Lecturer in Computer Science</strong><br/>
-      Ulster University Belfast, Northern Ireland (UK)
-    </div>
-
-    <p class="tagline">
-      My research focuses on <strong>applied multimodal artificial intelligence</strong> for intelligent decision-making in
-      <strong>healthcare</strong>, <strong>infrastructure</strong>, and <strong>societal systems</strong>, with emphasis on
-      <strong>real-world deployment</strong>, <strong>ethics</strong>, and <strong>impact</strong>.
-    </p>
+  <!-- RIGHT -->
+  <div class="right">
+    <h3>Contact Information</h3>
+    <p>School of Computing</p>
+    <p>Ulster University Belfast</p>
+    <p>Belfast, Northern Ireland (UK)</p>
+    <p>Email: <a href="mailto:n.ejaz@ulster.ac.uk">n.ejaz@ulster.ac.uk</a></p>
 
     <div class="links">
-      <a href="mailto:n.ejaz@ulster.ac.uk">Email</a>
-      <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <h3>Related links</h3>
+      <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
       <a href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/naveed-ejaz" target="_blank" rel="noopener">GitHub</a>
-      <a href="/contact/">Contact Page</a>
+      <a href="/contact/">Contact page</a>
     </div>
-
-    <div class="panel">
-      <h3>Research themes</h3>
-      <ul>
-        <li><strong>AI for Health & Wellbeing</strong> — clinical decision support, privacy-aware AI</li>
-        <li><strong>AI for Smart Infrastructure & Planning</strong> — drone imagery, monitoring</li>
-        <li><strong>Responsible AI for Safety & Society</strong> — online harms, explainable AI</li>
-        <li><strong>Multimodal & Generative AI Systems</strong> — vision–language, RAG, edge/cloud</li>
-      </ul>
-    </div>
-
-    <div class="panel">
-      <h3>Prospective students</h3>
-      <ul>
-        <li>PhD / MSc supervision in applied AI (CV, NLP/LLMs, multimodal AI, responsible AI)</li>
-        <li>Email me with your CV + a short description of interests</li>
-      </ul>
-    </div>
-
   </div>
+
 </div>
