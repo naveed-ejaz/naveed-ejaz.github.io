@@ -1,82 +1,94 @@
 ---
 layout: home
-author_profile: true
-title: "Dr Naveed Ejaz"
+author_profile: false
+title: ""
 classes: wide
 ---
 
 <style>
+/* Tweak overall typography for a cleaner look */
+.page__content{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Hide theme-generated page title area (some themes show it even on home) */
+.page__title, .page__hero--overlay, .page__hero, header.page__title{
+  display: none !important;
+}
+
 .hero-card{
   display:grid;
   grid-template-columns: 1.2fr 0.9fr;
-  gap:1.5rem;
-  padding:1.6rem;
-  border-radius:20px;
+  gap:1.1rem;
+  padding:1.25rem;
+  border-radius:18px;
   background: linear-gradient(135deg, #f0f7ff, #f5f3ff);
   border:1px solid #e5e7eb;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  margin-bottom:2rem;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+  margin: 0.5rem 0 1.5rem 0;
 }
 
 .hero-kicker{
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size:0.8rem;
+  font-size:0.72rem;
   color:#475569;
-  margin-bottom:0.3rem;
+  margin:0 0 0.25rem 0;
 }
 
 .hero-title{
-  font-size:2.3rem;
-  font-weight:700;
-  margin:0 0 0.5rem 0;
+  font-size:1.7rem;
+  font-weight:750;
+  margin:0 0 0.45rem 0;
   color:#0f172a;
 }
 
 .hero-subtitle{
-  font-size:1.05rem;
-  line-height:1.65;
+  font-size:0.98rem;
+  line-height:1.6;
   color:#334155;
-  max-width:62ch;
+  margin:0.2rem 0 0.9rem 0;
+  max-width: 64ch;
 }
 
 .hero-meta{
   display:flex;
-  gap:1rem;
+  gap:0.75rem;
   flex-wrap:wrap;
-  margin:1rem 0 1.2rem 0;
+  margin:0.85rem 0 1rem 0;
 }
 
 .meta-item{
   background:white;
-  padding:0.7rem 0.9rem;
+  padding:0.6rem 0.8rem;
   border-radius:14px;
   border:1px solid #e5e7eb;
-  min-width:220px;
+  min-width:240px;
 }
 
 .meta-label{
   display:block;
-  font-size:0.75rem;
+  font-size:0.72rem;
   color:#64748b;
+  margin-bottom: 0.1rem;
 }
 
 .meta-value{
-  font-weight:600;
+  font-weight:650;
   color:#0f172a;
 }
 
 .hero-links{
   display:flex;
-  gap:0.6rem;
+  gap:0.55rem;
   flex-wrap:wrap;
 }
 
 .btn-primary,.btn-ghost{
-  padding:0.55rem 1rem;
+  padding:0.5rem 0.9rem;
   border-radius:999px;
-  font-weight:600;
+  font-weight:650;
+  font-size:0.92rem;
   text-decoration:none !important;
   border:1px solid #c7d2fe;
 }
@@ -94,24 +106,42 @@ classes: wide
 
 .hero-panel{
   background:white;
-  border-radius:18px;
-  padding:1.2rem 1.3rem;
+  border-radius:16px;
+  padding:1rem 1.05rem;
   border:1px solid #e5e7eb;
 }
 
 .hero-panel h3{
-  margin-top:0;
+  margin:0 0 0.55rem 0;
+  font-size:1.05rem;
 }
 
 .hero-panel ul{
-  padding-left:1.1rem;
+  padding-left:1.05rem;
+  margin:0;
+}
+
+.hero-panel li{
+  margin: 0.35rem 0;
+  font-size:0.95rem;
+  line-height:1.45;
 }
 
 .soft-rule{
   height:1px;
   border:none;
   background:#e5e7eb;
-  margin:2rem 0;
+  margin:1.5rem 0;
+}
+
+.section-title{
+  font-size:1.25rem;
+  margin: 0 0 0.6rem 0;
+}
+
+.section-text{
+  font-size:0.98rem;
+  line-height:1.65;
 }
 
 @media(max-width:900px){
@@ -127,7 +157,7 @@ classes: wide
     <div class="hero-title">Dr Naveed Ejaz</div>
 
     <p class="hero-subtitle">
-      I am a <strong>Lecturer in Computer Science at Ulster University Belfast</strong>. 
+      I am a <strong>Lecturer in Computer Science at Ulster University Belfast</strong>.
       My research focuses on <strong>applied multimodal artificial intelligence</strong> for
       intelligent decision-making in <strong>healthcare</strong>, <strong>infrastructure</strong>,
       and <strong>societal systems</strong>, with emphasis on <strong>real-world deployment</strong>,
@@ -149,30 +179,11 @@ classes: wide
 
     <div class="hero-links">
       <a class="btn-primary" href="/contact/">Contact</a>
-      <a class="btn-ghost" href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <a class="btn-ghost" href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank">LinkedIn</a>
-      <a class="btn-ghost" href="https://github.com/naveed-ejaz" target="_blank">GitHub</a>
+      <a class="btn-ghost" href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="btn-ghost" href="https://www.linkedin.com/in/naveed-ejaz/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn-ghost" href="https://github.com/naveed-ejaz" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 
   <div class="hero-panel">
-    <h3>Research themes</h3>
-    <ul>
-      <li><strong>AI for Health & Wellbeing</strong> – clinical decision support and privacy-aware AI</li>
-      <li><strong>AI for Smart Infrastructure & Planning</strong> – drone imagery and road monitoring</li>
-      <li><strong>Responsible AI for Safety & Society</strong> – online harms and explainable AI</li>
-      <li><strong>Multimodal & Generative AI Systems</strong> – vision–language models, RAG, edge/cloud AI</li>
-    </ul>
-  </div>
-
-</div>
-
-<hr class="soft-rule"/>
-
-## Supervision & Collaboration
-
-I welcome enquiries from prospective <strong>PhD and MSc students</strong> interested in applied,
-impact-driven AI research aligned with the themes above, including interdisciplinary projects with
-healthcare, engineering, and public-sector partners.
-
-Please email me with a brief description of your background and research interests.
+    <h3>Resear
