@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teaching | Dr Naveed Ejaz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --bg1:#f6f9ff;
+      --bg2:#fbf7ff;
+      --link:#1d4ed8;
+      --shadow: 0 10px 24px rgba(2,6,23,0.06);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, var(--bg1), transparent 60%),
+        radial-gradient(1200px 600px at 80% 10%, var(--bg2), transparent 55%),
+        #ffffff;
+    }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 34px 20px 70px;
+    }
+
+    /* Top navigation */
+    .top{
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom: 28px;
+    }
+    .top nav a{
+      margin-left: 18px;
+      color: var(--muted);
+      font-weight:600;
+      font-size: 0.95rem;
+    }
+    .top nav a:hover{ color: var(--ink); text-decoration:none; }
+    .top nav a.active{ color: var(--ink); }
+
+    h1{
+      margin: 0 0 18px 0;
+      font-size: 2.1rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+    }
+
+    h2{
+      margin: 26px 0 12px 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    p{
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+      max-width: 75ch;
+    }
+
+    .card{
+      margin-top: 18px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .module{
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .module:last-child{ border-bottom:none; }
+
+    .code{
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+    .title{
+      font-weight: 650;
+    }
+    .term{
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 900px){
+      h1{ font-size: 1.8rem; }
+      p{ font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOP RIGHT NAV -->
+    <div class="top">
+      <nav aria-label="Primary">
+        <a href="./">Home</a>
+        <a href="./research.html">Research</a>
+        <a href="./publications.html">Publications</a>
+        <a class="active" href="./teaching.html">Teaching</a>
+      </nav>
+    </div>
+
+    <h1>Teaching</h1>
+
+    <p>
+      I teach undergraduate and postgraduate modules in computer science, artificial intelligence,
+      and applied computing, with an emphasis on practical skills and real-world problem solving.
+    </p>
+
+    <div class="card">
+      <h2>Spring 2026</h2>
+
+      <div class="module">
+        <div class="code">COM431</div>
+        <div class="title">Server Side Development</div>
+      </div>
+
+      <div class="module">
+        <div class="code">COM672</div>
+        <div class="title">Artificial Intelligence and Computer Vision</div>
+      </div>
+
+      <div class="module">
+        <div class="code">COM117</div>
+        <div class="title">Introduction to Physical Computing</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
