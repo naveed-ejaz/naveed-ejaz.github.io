@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications | Dr Naveed Ejaz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#0f172a;
+      --muted:#475569;
+      --line:#e5e7eb;
+      --card:#ffffff;
+      --bg1:#f6f9ff;
+      --bg2:#fbf7ff;
+      --link:#1d4ed8;
+      --shadow: 0 10px 24px rgba(2,6,23,0.06);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, var(--bg1), transparent 60%),
+        radial-gradient(1200px 600px at 80% 10%, var(--bg2), transparent 55%),
+        #ffffff;
+    }
+
+    a{ color:var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 34px 20px 70px;
+    }
+
+    /* Top navigation */
+    .top{
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom: 28px;
+    }
+    .top nav a{
+      margin-left: 18px;
+      color: var(--muted);
+      font-weight:600;
+      font-size: 0.95rem;
+    }
+    .top nav a:hover{ color: var(--ink); text-decoration:none; }
+    .top nav a.active{ color: var(--ink); }
+
+    /* Page content */
+    h1{
+      margin: 0 0 14px 0;
+      font-size: 2.1rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+    }
+
+    p{
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+      max-width: 75ch;
+    }
+
+    .card{
+      margin-top: 22px;
+      background: rgba(255,255,255,0.85);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .scholar{
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 900px){
+      h1{ font-size: 1.8rem; }
+      p{ font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <!-- TOP RIGHT NAV -->
+    <div class="top">
+      <nav aria-label="Primary">
+        <a href="./">Home</a>
+        <a href="./research.html">Research</a>
+        <a class="active" href="./publications.html">Publications</a>
+        <a href="./teaching.html">Teaching</a>
+      </nav>
+    </div>
+
+    <h1>Publications</h1>
+
+    <p>
+      My peer-reviewed publications, citations, and research impact metrics are maintained on
+      <strong>Google Scholar</strong>.
+    </p>
+
+    <div class="card">
+      <p>
+        For the most up-to-date list of journal articles, conference papers, and citations, please visit:
+      </p>
+
+      <p class="scholar">
+        👉
+        <a href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en"
+           target="_blank"
+           rel="noopener noreferrer">
+          Google Scholar – Dr Naveed Ejaz
+        </a>
+      </p>
+
+      <p style="margin-top:18px;">
+        Selected publications and project-specific outputs may be highlighted here in the future.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
