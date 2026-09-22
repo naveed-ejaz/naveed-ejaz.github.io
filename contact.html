@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Contact | Dr Naveed Ejaz</title>
 
@@ -14,53 +14,49 @@
   >
 
   <style>
-
     :root {
-      --ink: #172033;
+      --text: #172033;
       --heading: #0f172a;
-      --muted: #5b6575;
+      --muted: #667085;
       --line: #e5e7eb;
       --blue: #1d4ed8;
-      --soft: #f8fafc;
-      --bg: #ffffff;
+      --blue-light: #eff6ff;
+      --soft: #f7f8fa;
+      --white: #ffffff;
+      --dark: #111827;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
     }
 
     a {
-      color: var(--blue);
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
     .container {
-      max-width: 1080px;
+      width: min(1120px, 92%);
       margin: auto;
-      padding: 0 28px;
     }
 
     /* Navigation */
-
     header {
-      border-bottom: 1px solid var(--line);
-      background: white;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
     }
 
     .nav {
@@ -68,281 +64,382 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 30px;
     }
 
     .nav-name {
-      font-weight: 750;
+      font-size: 18px;
+      font-weight: 700;
       color: var(--heading);
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 26px;
       align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: var(--heading);
-      text-decoration: none;
-    }
-
-    .nav-links .contact-link {
-      background: var(--heading);
-      color: white;
-      padding: 8px 15px;
+      padding: 9px 13px;
       border-radius: 7px;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s ease;
     }
 
-    /* Page */
-
-    .page {
-      padding: 70px 0;
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue);
+      background: var(--blue-light);
     }
 
-    h1 {
-      margin: 0;
-      font-size: 2.6rem;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
+    /* Hero */
+    .hero {
+      background: var(--soft);
+      border-bottom: 1px solid var(--line);
+      padding: 78px 0 70px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 52px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
       color: var(--heading);
     }
 
-    .intro {
-      max-width: 650px;
-      margin: 15px 0 45px;
+    .hero p {
+      max-width: 760px;
       color: var(--muted);
-      font-size: 1rem;
+      font-size: 18px;
+    }
+
+    /* Main */
+    .page {
+      padding: 65px 0;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
     .card {
       border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 25px;
-      background: white;
+      border-radius: 12px;
+      padding: 28px;
+      background: var(--white);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
     }
 
     .card h2 {
-      margin: 0 0 16px;
-      font-size: 1.05rem;
+      margin-bottom: 18px;
+      font-size: 19px;
       color: var(--heading);
     }
 
     .card p {
-      margin: 9px 0;
+      margin: 10px 0;
       color: var(--muted);
+      font-size: 15px;
     }
 
     .label {
-      font-weight: 650;
+      font-weight: 600;
       color: var(--heading);
     }
 
-    footer {
-      border-top: 1px solid var(--line);
-      margin-top: 40px;
-      padding: 28px 0;
-      color: var(--muted);
-      font-size: 0.84rem;
+    .card a {
+      color: var(--blue);
     }
 
-    @media (max-width: 700px) {
+    .card a:hover {
+      text-decoration: underline;
+    }
 
+    /* Research CTA */
+    .cta {
+      margin-top: 22px;
+      padding: 42px;
+      border-radius: 14px;
+      background: var(--dark);
+      color: white;
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+      font-size: 27px;
+    }
+
+    .cta p {
+      max-width: 750px;
+      margin-bottom: 22px;
+      color: #d1d5db;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 7px;
+      background: white;
+      color: var(--dark) !important;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .cta-button:hover {
+      text-decoration: none !important;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
       .nav {
-        padding: 14px 0;
-      }
-
-      .nav-name {
-        display: none;
+        flex-direction: column;
+        padding: 15px 0;
       }
 
       .nav-links {
-        width: 100%;
         justify-content: center;
-        gap: 14px;
-        flex-wrap: wrap;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
-      .page {
-        padding: 45px 0;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
     }
 
+    @media (max-width: 600px) {
+      .hero {
+        padding: 55px 0;
+      }
+
+      .page {
+        padding: 48px 0;
+      }
+
+      .nav-links a {
+        padding: 7px 8px;
+        font-size: 13px;
+      }
+
+      .cta {
+        padding: 28px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
+  <!-- Navigation -->
+  <header>
+    <div class="container nav">
 
-    <div class="nav-name">
-      Dr Naveed Ejaz
-    </div>
-
-    <nav class="nav-links">
-      <a href="./">Home</a>
-      <a href="./research.html">Research</a>
-      <a href="./publications.html">Publications</a>
-      <a href="./teaching.html">Teaching</a>
-      <a href="./contact.html" class="contact-link">Contact</a>
-    </nav>
-
-  </div>
-</header>
-
-
-<main class="page">
-
-  <div class="container">
-
-    <h1>Contact</h1>
-
-    <p class="intro">
-      For academic enquiries, research collaborations, PhD supervision
-      enquiries, or other professional matters, please feel free to get
-      in touch.
-    </p>
-
-
-    <div class="contact-grid">
-
-      <div class="card">
-
-        <h2>Academic Contact</h2>
-
-        <p>
-          <span class="label">Name:</span>
-          Dr Naveed Ejaz
-        </p>
-
-        <p>
-          <span class="label">Position:</span>
-          Lecturer in Computing
-        </p>
-
-        <p>
-          <span class="label">School:</span>
-          School of Computing
-        </p>
-
-        <p>
-          <span class="label">Institution:</span>
-          <a
-            href="https://www.ulster.ac.uk/"
-            target="_blank"
-            rel="noopener">
-            Ulster University
-          </a>
-        </p>
-
-        <p>
-          <span class="label">Location:</span>
-          Belfast, Northern Ireland, UK
-        </p>
-
+      <div class="nav-name">
+        Dr Naveed Ejaz
       </div>
 
-
-      <div class="card">
-
-        <h2>Get in Touch</h2>
-
-        <p>
-          <span class="label">Email:</span><br>
-          <a href="mailto:n.ejaz@ulster.ac.uk">
-            n.ejaz@ulster.ac.uk
-          </a>
-        </p>
-
-        <p>
-          <span class="label">Telephone:</span><br>
-          <a href="tel:+442895367152">
-            +44 28 9536 7152
-          </a>
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h2>Academic Profiles</h2>
-
-        <p>
-          <a
-            href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en"
-            target="_blank"
-            rel="noopener">
-            Google Scholar
-          </a>
-        </p>
-
-        <p>
-          <a
-            href="https://www.linkedin.com/in/naveed-ejaz/"
-            target="_blank"
-            rel="noopener">
-            LinkedIn
-          </a>
-        </p>
-
-        <p>
-          <a
-            href="https://orcid.org/"
-            target="_blank"
-            rel="noopener">
-            ORCID
-          </a>
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h2>Research Enquiries</h2>
-
-        <p>
-          I welcome enquiries regarding research collaboration,
-          postgraduate research supervision, and interdisciplinary
-          projects in artificial intelligence and related areas.
-        </p>
-
-      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="supervision.html">Supervision</a>
+        <a href="news.html">News</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
 
     </div>
-
-  </div>
-
-</main>
+  </header>
 
 
-<footer>
-  <div class="container">
-    © 2026 Dr Naveed Ejaz · Ulster University · Belfast, Northern Ireland
-  </div>
-</footer>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Contact</h1>
+
+      <p>
+        For academic enquiries, research collaborations, PhD supervision
+        enquiries, or other professional matters, please feel free to
+        get in touch.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- Contact Information -->
+  <main class="page">
+
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- Academic Contact -->
+        <div class="card">
+
+          <h2>Academic Contact</h2>
+
+          <p>
+            <span class="label">Name:</span>
+            Dr Naveed Ejaz
+          </p>
+
+          <p>
+            <span class="label">Position:</span>
+            Lecturer in Computing
+          </p>
+
+          <p>
+            <span class="label">School:</span>
+            School of Computing
+          </p>
+
+          <p>
+            <span class="label">Institution:</span>
+            <a
+              href="https://www.ulster.ac.uk/"
+              target="_blank"
+              rel="noopener">
+              Ulster University
+            </a>
+          </p>
+
+          <p>
+            <span class="label">Location:</span>
+            Belfast, Northern Ireland, UK
+          </p>
+
+        </div>
+
+
+        <!-- Get in Touch -->
+        <div class="card">
+
+          <h2>Get in Touch</h2>
+
+          <p>
+            <span class="label">Email:</span><br>
+            <a href="mailto:n.ejaz@ulster.ac.uk">
+              n.ejaz@ulster.ac.uk
+            </a>
+          </p>
+
+          <p>
+            <span class="label">Telephone:</span><br>
+            <a href="tel:+442895367152">
+              +44 28 9536 7152
+            </a>
+          </p>
+
+        </div>
+
+
+        <!-- Academic Profiles -->
+        <div class="card">
+
+          <h2>Academic Profiles</h2>
+
+          <p>
+            <a
+              href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en"
+              target="_blank"
+              rel="noopener">
+              Google Scholar
+            </a>
+          </p>
+
+          <p>
+            <a
+              href="https://www.linkedin.com/in/naveed-ejaz/"
+              target="_blank"
+              rel="noopener">
+              LinkedIn
+            </a>
+          </p>
+
+          <p>
+            <a
+              href="https://orcid.org/"
+              target="_blank"
+              rel="noopener">
+              ORCID
+            </a>
+          </p>
+
+        </div>
+
+
+        <!-- Research Enquiries -->
+        <div class="card">
+
+          <h2>Research Enquiries</h2>
+
+          <p>
+            I welcome enquiries regarding research collaboration,
+            postgraduate research supervision, interdisciplinary projects,
+            and applied research in artificial intelligence and related areas.
+          </p>
+
+          <p>
+            My research interests include artificial intelligence,
+            machine learning, computer vision, natural language processing,
+            large language models, multimodal AI, edge AI and intelligent
+            decision-support systems.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- CTA -->
+      <div class="cta">
+
+        <h2>Interested in collaboration?</h2>
+
+        <p>
+          If you are interested in research collaboration, PhD supervision,
+          academic projects, or industry-academic partnerships, please
+          contact me by email.
+        </p>
+
+        <a
+          class="cta-button"
+          href="mailto:n.ejaz@ulster.ac.uk">
+          Email me
+        </a>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © 2026 Dr Naveed Ejaz · Ulster University · School of Computing · Belfast, Northern Ireland
+    </div>
+  </footer>
 
 </body>
 </html>
