@@ -1,695 +1,1140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Research | Dr Naveed Ejaz</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-    :root {
-      --heading: #0f172a;
-      --ink: #172033;
-      --muted: #5b6575;
-      --line: #e5e7eb;
-      --blue: #1d4ed8;
-      --blue-light: #eff6ff;
-      --soft: #f8fafc;
-      --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Arial, sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
-    a {
-      color: var(--blue);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    /* Navigation */
-
-    header {
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.97);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-name {
-      font-size: 1.05rem;
-      font-weight: 750;
-      color: var(--heading);
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-      color: var(--heading);
-      text-decoration: none;
-    }
-
-    .nav-links .active {
-      color: var(--heading);
-    }
-
-    .nav-links .contact-link {
-      background: var(--heading);
-      color: white;
-      padding: 8px 15px;
-      border-radius: 7px;
-    }
-
-    .nav-links .contact-link:hover {
-      color: white;
-      opacity: 0.9;
-    }
-
-    /* Page header */
-
-    .page-header {
-      padding: 70px 0 45px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .eyebrow {
-      margin-bottom: 12px;
-      color: var(--blue);
-      font-size: 0.82rem;
-      font-weight: 750;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    h1 {
-      margin: 0;
-      color: var(--heading);
-      font-size: 3rem;
-      line-height: 1.1;
-      letter-spacing: -0.045em;
-      font-weight: 800;
-    }
-
-    .page-intro {
-      max-width: 780px;
-      margin: 20px 0 0;
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.8;
-    }
-
-    /* Main content */
-
-    main {
-      padding-bottom: 55px;
-    }
-
-    .research-section {
-      padding: 48px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .research-section:last-child {
-      border-bottom: none;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .section-number {
-      color: var(--blue);
-      font-size: 0.8rem;
-      font-weight: 750;
-      letter-spacing: 0.08em;
-    }
-
-    h2 {
-      margin: 0;
-      color: var(--heading);
-      font-size: 1.55rem;
-      line-height: 1.3;
-      letter-spacing: -0.025em;
-    }
-
-    .research-section p {
-      max-width: 850px;
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-
-    .research-section p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Research themes */
-
-    .theme-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 26px;
-    }
-
-    .theme-card {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      background: var(--white);
-      transition: border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .theme-card:hover {
-      border-color: #bfdbfe;
-      transform: translateY(-2px);
-    }
-
-    .theme-card h3 {
-      margin: 0 0 8px;
-      color: var(--heading);
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-
-    .theme-card p {
-      margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-
-    /* Current projects */
-
-    .project-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 25px;
-    }
-
-    .project {
-      padding: 21px 23px;
-      border: 1px solid var(--line);
-      border-left: 4px solid var(--blue);
-      border-radius: 8px;
-      background: var(--soft);
-    }
-
-    .project h3 {
-      margin: 0 0 7px;
-      color: var(--heading);
-      font-size: 1rem;
-      line-height: 1.45;
-    }
-
-    .project p {
-      margin: 0;
-      font-size: 0.93rem;
-    }
-
-    /* Keywords */
-
-    .keywords {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 24px;
-    }
-
-    .keyword {
-      padding: 7px 12px;
-      border: 1px solid #dbe4f0;
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--muted);
-      font-size: 0.84rem;
-      font-weight: 600;
-    }
-
-    /* Footer */
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0 38px;
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 1000px) {
-      .nav-links {
-        gap: 15px;
-      }
-
-      .nav-links a {
-        font-size: 0.84rem;
-      }
-    }
-
-    @media (max-width: 800px) {
-      .nav {
-        height: auto;
-        padding: 14px 0;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-      }
-
-      .nav-links .contact-link {
-        padding: 6px 10px;
-      }
-
-      .page-header {
-        padding: 50px 0 38px;
-      }
-
-      h1 {
-        font-size: 2.35rem;
-      }
-
-      .theme-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 0 20px;
-      }
-
-      .nav-name {
-        display: none;
-      }
-
-      .nav {
-        justify-content: center;
-      }
-
-      .nav-links {
-        justify-content: center;
-      }
-
-      .nav-links a {
-        font-size: 0.82rem;
-      }
-
-      .page-header {
-        padding-top: 38px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .research-section {
-        padding: 38px 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Dr Naveed Ejaz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --text: #172033;
+            --muted: #667085;
+            --light: #f7f8fa;
+            --border: #e5e7eb;
+            --accent: #1d4ed8;
+            --accent-light: #eff6ff;
+            --white: #ffffff;
+            --dark: #111827;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: #475467;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Page Header */
+
+        .page-header {
+            padding: 95px 0 75px;
+            background:
+                linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .page-header p {
+            max-width: 850px;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* General Sections */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 42px;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 780px;
+        }
+
+        /* Research Themes */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .research-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            background: var(--white);
+            transition: transform 0.2s ease, border-color 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-3px);
+            border-color: #cbd5e1;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .research-card .number {
+            display: inline-flex;
+            width: 34px;
+            height: 34px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .research-card h3 {
+            font-size: 18px;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .research-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Projects */
+
+        .projects {
+            background: var(--light);
+        }
+
+        .project-list {
+            display: grid;
+            gap: 22px;
+        }
+
+        .project {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 21px;
+            line-height: 1.35;
+        }
+
+        .project-year {
+            flex-shrink: 0;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .project ul {
+            padding-left: 20px;
+            color: #475467;
+            font-size: 14px;
+        }
+
+        .project li {
+            margin-bottom: 7px;
+        }
+
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .tool {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 11px;
+            color: #475467;
+        }
+
+        /* Research Impact */
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .impact-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .impact-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .impact-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .impact-card strong {
+            color: var(--text);
+        }
+
+        /* Funding */
+
+        .funding {
+            background: var(--light);
+        }
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .funding-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .funding-card h3 {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .funding-card .meta {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .funding-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Collaboration */
+
+        .collaboration {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .collaboration h2 {
+            font-size: 32px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+        }
+
+        .collaboration p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .collaboration-list {
+            list-style: none;
+            display: grid;
+            gap: 13px;
+        }
+
+        .collaboration-list li {
+            padding: 15px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 14px;
+            background: #fff;
+        }
+
+        /* Research Profile */
+
+        .profile-strip {
+            background: var(--dark);
+            color: white;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .profile-stat {
+            border-left: 2px solid rgba(255,255,255,0.25);
+            padding-left: 22px;
+        }
+
+        .profile-stat .value {
+            display: block;
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 7px;
+        }
+
+        .profile-stat .label {
+            color: #cbd5e1;
+            font-size: 13px;
+        }
+
+        /* Contact CTA */
+
+        .contact-cta {
+            text-align: center;
+            padding: 85px 0;
+        }
+
+        .contact-cta h2 {
+            font-size: 34px;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .contact-cta p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .button:hover {
+            background: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .research-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .impact-grid,
+            .funding-grid,
+            .collaboration {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav-inner {
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .page-header {
+                padding: 65px 0 55px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .research-grid,
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-top {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand">Dr Naveed Ejaz</a>
 
-    <div class="nav-name">
-      Dr Naveed Ejaz
-    </div>
-
-    <nav class="nav-links">
-
-      <a href="./">Home</a>
-
-      <a href="./research.html" class="active">
-        Research
-      </a>
-
-      <a href="./publications.html">
-        Publications
-      </a>
-
-      <a href="./teaching.html">
-        Teaching
-      </a>
-
-      <a href="./supervision.html">
-        Supervision
-      </a>
-
-      <a href="./news.html">
-        News
-      </a>
-
-      <a href="./contact.html" class="contact-link">
-        Contact
-      </a>
-
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="supervision.html">Supervision</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-  </div>
-</header>
 
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="eyebrow">Research</div>
 
-<main>
+            <h1>
+                Artificial Intelligence for
+                Real-World Problems
+            </h1>
 
-  <!-- PAGE HEADER -->
-
-  <section class="page-header">
-
-    <div class="container">
-
-      <div class="eyebrow">
-        Research
-      </div>
-
-      <h1>
-        Research &amp; Innovation
-      </h1>
-
-      <p class="page-intro">
-        My research focuses on the development and application of
-        artificial intelligence for real-world problems, with particular
-        interests in multimodal AI, computer vision, natural language
-        processing, responsible AI, and intelligent decision-making.
-        I am particularly interested in AI systems that can operate
-        reliably in complex, uncertain, and data-constrained environments.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- RESEARCH THEMES -->
-
-  <section class="research-section">
-
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-number">01</span>
-        <h2>Research Themes</h2>
-      </div>
-
-      <div class="theme-grid">
-
-        <div class="theme-card">
-          <h3>Multimodal Artificial Intelligence</h3>
-          <p>
-            AI systems that integrate and reason across multiple
-            modalities, including vision, language, video, and other
-            forms of contextual information.
-          </p>
+            <p>
+                My research focuses on Artificial Intelligence, Machine Learning,
+                Computer Vision, Natural Language Processing, Data Science and
+                intelligent decision-support systems, with an emphasis on
+                interdisciplinary and applied research.
+            </p>
         </div>
+    </header>
 
-        <div class="theme-card">
-          <h3>Computer Vision</h3>
-          <p>
-            Visual understanding, recognition, detection, and analysis
-            for practical applications and challenging real-world
-            environments.
-          </p>
+
+    <!-- Research Themes -->
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">01 / RESEARCH THEMES</div>
+                <h2>Research Areas</h2>
+                <p>
+                    My research spans AI methods, intelligent systems and
+                    application-driven research across multimedia, healthcare,
+                    infrastructure, environmental monitoring and other
+                    real-world domains.
+                </p>
+            </div>
+
+            <div class="research-grid">
+
+                <article class="research-card">
+                    <span class="number">01</span>
+                    <h3>Artificial Intelligence & Machine Learning</h3>
+                    <p>
+                        Machine learning, deep learning and AI methods for
+                        developing intelligent systems and solving complex
+                        real-world problems.
+                    </p>
+                </article>
+
+                <article class="research-card">
+                    <span class="number">02</span>
+                    <h3>Computer Vision & Image Processing</h3>
+                    <p>
+                        Visual feature extraction, image understanding,
+                        recognition, classification and analysis of visual
+                        information.
+                    </p>
+                </article>
+
+                <article class="research-card">
+                    <span class="number">03</span>
+                    <h3>Natural Language Processing & LLMs</h3>
+                    <p>
+                        NLP, Large Language Models and intelligent language-based
+                        systems, including Retrieval-Augmented Generation.
+                    </p>
+                </article>
+
+                <article class="research-card">
+                    <span class="number">04</span>
+                    <h3>Data Science & Intelligent Decision Support</h3>
+                    <p>
+                        Data-driven modelling, analytics, prediction and
+                        intelligent decision-support for practical applications.
+                    </p>
+                </article>
+
+                <article class="research-card">
+                    <span class="number">05</span>
+                    <h3>Multimedia Analysis</h3>
+                    <p>
+                        Multimedia classification, summarization, retrieval,
+                        visual attention and analysis of video and image content.
+                    </p>
+                </article>
+
+                <article class="research-card">
+                    <span class="number">06</span>
+                    <h3>Applied AI & Cloud-Based Intelligent Systems</h3>
+                    <p>
+                        Development and deployment of AI systems using cloud
+                        platforms, distributed computing and modern software
+                        technologies.
+                    </p>
+                </article>
+
+            </div>
         </div>
+    </section>
 
-        <div class="theme-card">
-          <h3>Natural Language Processing &amp; LLMs</h3>
-          <p>
-            Language-based AI, large language models, multimodal
-            language understanding, and their application to
-            intelligent systems.
-          </p>
+
+    <!-- Current and Recent Research -->
+    <section class="projects">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">02 / RESEARCH PROJECTS</div>
+                <h2>Current & Recent Research</h2>
+                <p>
+                    Selected projects demonstrating the application of AI,
+                    machine learning and data-driven methods to healthcare,
+                    geospatial analysis, infrastructure and multimedia.
+                </p>
+            </div>
+
+            <div class="project-list">
+
+                <article class="project">
+                    <div class="project-top">
+                        <h3>
+                            Automated Clinical Form Completion Using
+                            LLMs and Retrieval-Augmented Generation
+                        </h3>
+                        <span class="project-year">2024–Present</span>
+                    </div>
+
+                    <p>
+                        Developing an AI-based approach for automated clinical
+                        form completion using Large Language Models and
+                        Retrieval-Augmented Generation.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Testing the approach in healthcare settings to improve
+                            the efficiency and accuracy of clinical form completion.
+                        </li>
+                        <li>
+                            Research ethics approval secured for the use of
+                            healthcare data.
+                        </li>
+                        <li>
+                            Privacy-compliant approaches for secure data handling,
+                            storage and APIs.
+                        </li>
+                    </ul>
+
+                    <div class="tools">
+                        <span class="tool">LLMs</span>
+                        <span class="tool">RAG</span>
+                        <span class="tool">Python</span>
+                        <span class="tool">Kubernetes</span>
+                        <span class="tool">Secure APIs</span>
+                        <span class="tool">Privacy</span>
+                    </div>
+                </article>
+
+
+                <article class="project">
+                    <div class="project-top">
+                        <h3>
+                            Automating Land Resources Development and
+                            Planning Services Using the MapAki Platform
+                        </h3>
+                        <span class="project-year">2022–2025</span>
+                    </div>
+
+                    <p>
+                        Research and development of AI solutions for drone image
+                        understanding, geospatial analysis, mapping and
+                        data-driven land resource planning.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Developed AI solutions for drone imagery analysis.
+                        </li>
+                        <li>
+                            Integrated geospatial analysis and AI for mapping and
+                            resource allocation.
+                        </li>
+                        <li>
+                            Contributed to the MapAki platform in collaboration
+                            with CES Strategies, Canada.
+                        </li>
+                    </ul>
+
+                    <div class="tools">
+                        <span class="tool">Computer Vision</span>
+                        <span class="tool">Drone Imagery</span>
+                        <span class="tool">Geospatial AI</span>
+                        <span class="tool">Python</span>
+                        <span class="tool">AWS</span>
+                        <span class="tool">Docker</span>
+                    </div>
+                </article>
+
+
+                <article class="project">
+                    <div class="project-top">
+                        <h3>
+                            Machine Learning-Based Stroke Risk Assessment
+                        </h3>
+                        <span class="project-year">2024–2025</span>
+                    </div>
+
+                    <p>
+                        Development of a machine learning model for stroke risk
+                        assessment using patient data under appropriate ethical
+                        and research governance procedures.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Obtained ethics approval for patient data analysis.
+                        </li>
+                        <li>
+                            Developed predictive models for stroke risk assessment.
+                        </li>
+                        <li>
+                            Developed an interactive R and Shiny interface for
+                            real-time risk predictions.
+                        </li>
+                    </ul>
+
+                    <div class="tools">
+                        <span class="tool">Machine Learning</span>
+                        <span class="tool">Healthcare AI</span>
+                        <span class="tool">R</span>
+                        <span class="tool">Shiny</span>
+                    </div>
+                </article>
+
+
+                <article class="project">
+                    <div class="project-top">
+                        <h3>
+                            AI-Driven Talent Matching and Immigration
+                            Pathway Optimisation
+                        </h3>
+                        <span class="project-year">2024</span>
+                    </div>
+
+                    <p>
+                        Development of an AI-driven platform to match talent with
+                        employment opportunities and support responses to labour
+                        shortages in Canada.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Developed AI-driven talent-matching approaches.
+                        </li>
+                        <li>
+                            Supervised an undergraduate research intern.
+                        </li>
+                        <li>
+                            Research developed in collaboration with an industry
+                            partner in Canada.
+                        </li>
+                    </ul>
+
+                    <div class="tools">
+                        <span class="tool">AI</span>
+                        <span class="tool">Machine Learning</span>
+                        <span class="tool">Apache Spark</span>
+                        <span class="tool">Talent Analytics</span>
+                    </div>
+                </article>
+
+
+                <article class="project">
+                    <div class="project-top">
+                        <h3>
+                            Movies Tags Extraction and Shot Classification
+                            Using Deep Learning
+                        </h3>
+                        <span class="project-year">2016–2017</span>
+                    </div>
+
+                    <p>
+                        Research conducted at the Fraunhofer Institute of
+                        Integrated Circuits on intelligent features for digital
+                        cinema and multimedia analysis.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Applied deep learning and convolutional neural
+                            networks for automatic movie tag extraction.
+                        </li>
+                        <li>
+                            Developed approaches for shot classification.
+                        </li>
+                        <li>
+                            Supported improved movie metadata and content
+                            discovery.
+                        </li>
+                    </ul>
+
+                    <div class="tools">
+                        <span class="tool">Deep Learning</span>
+                        <span class="tool">CNNs</span>
+                        <span class="tool">Multimedia Analysis</span>
+                        <span class="tool">C++</span>
+                    </div>
+                </article>
+
+
+                <article class="project">
+                    <div class="project-top">
+                        <h3>
+                            Video Summarization for Digital Content Retrieval
+                        </h3>
+                        <span class="project-year">2011–2013</span>
+                    </div>
+
+                    <p>
+                        Main research project underpinning my PhD, focused on
+                        extracting key moments from video content and supporting
+                        efficient digital content retrieval.
+                    </p>
+
+                    <ul>
+                        <li>
+                            Investigated visual attention and visual feature
+                            extraction methods.
+                        </li>
+                        <li>
+                            Developed video summarization models for identifying
+                            important content.
+                        </li>
+                        <li>
+                            Explored deep learning and computational approaches
+                            for video analysis and summarization.
+                        </li>
+                    </ul>
+
+                    <div class="tools">
+                        <span class="tool">Video Analysis</span>
+                        <span class="tool">Visual Attention</span>
+                        <span class="tool">Feature Extraction</span>
+                        <span class="tool">Video Summarization</span>
+                        <span class="tool">MATLAB</span>
+                    </div>
+                </article>
+
+            </div>
         </div>
+    </section>
 
-        <div class="theme-card">
-          <h3>Responsible &amp; Trustworthy AI</h3>
-          <p>
-            Developing AI systems with greater emphasis on privacy,
-            reliability, transparency, uncertainty, and responsible
-            deployment.
-          </p>
+
+    <!-- Research Impact -->
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">03 / RESEARCH IMPACT</div>
+                <h2>From Research to Application</h2>
+                <p>
+                    A key focus of my research is translating AI and machine
+                    learning research into practical systems and industry
+                    applications.
+                </p>
+            </div>
+
+            <div class="impact-grid">
+
+                <article class="impact-card">
+                    <h3>Geospatial & Land Resource Planning</h3>
+                    <p>
+                        Research from the MapAki project was integrated into a
+                        platform supporting geospatial analysis, mapping and
+                        decision-making for land resource planning in
+                        collaboration with <strong>CES Strategies, Canada</strong>.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <h3>Healthcare Form Automation</h3>
+                    <p>
+                        Research on automated clinical form completion using
+                        LLMs and RAG was implemented by
+                        <strong>WaivetheWait, Canada</strong>, to support
+                        automated clinical form completion.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <h3>Stroke Risk Assessment</h3>
+                    <p>
+                        Research on machine learning-based stroke risk assessment
+                        was implemented by <strong>Health Sciences North
+                        Horizon, Canada</strong> to support predictive
+                        assessment.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <h3>Digital Cinema</h3>
+                    <p>
+                        Research conducted at the
+                        <strong>Fraunhofer Institute for Integrated Circuits</strong>
+                        contributed to intelligent movie metadata enhancement
+                        and classification features for the EasyDCP digital
+                        cinema platform.
+                    </p>
+                </article>
+
+            </div>
         </div>
+    </section>
 
-        <div class="theme-card">
-          <h3>Edge &amp; Cloud AI</h3>
-          <p>
-            Distributed AI architectures that balance computational
-            resources, latency, privacy, communication costs, and
-            real-world deployment requirements.
-          </p>
+
+    <!-- Research Funding -->
+    <section class="funding">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">04 / FUNDING & GRANT DEVELOPMENT</div>
+                <h2>Research Funding Experience</h2>
+                <p>
+                    Experience developing research proposals with academic and
+                    industry partners across healthcare, AI, machine learning
+                    and applied data science.
+                </p>
+            </div>
+
+            <div class="funding-grid">
+
+                <article class="funding-card">
+                    <div class="meta">MITACS · 2024 · CAD 50,000</div>
+                    <h3>
+                        Automated Clinical Form Completion in Canada
+                        Using LLMs and RAG
+                    </h3>
+                    <p>
+                        Independently authored the complete grant proposal after
+                        conceptualising the research idea in collaboration with
+                        WaivetheWait, Canada.
+                    </p>
+                </article>
+
+                <article class="funding-card">
+                    <div class="meta">MITACS · 2024 · CAD 60,000</div>
+                    <h3>
+                        AI-Driven Talent Matching and Immigration
+                        Pathway Optimisation
+                    </h3>
+                    <p>
+                        Independently authored the complete grant proposal after
+                        developing the research concept with GreenbergHammeed PC,
+                        Canada.
+                    </p>
+                </article>
+
+                <article class="funding-card">
+                    <div class="meta">MITACS / NSERC · 2025 · CAD 200,000 proposed</div>
+                    <h3>
+                        Enhancing Tenant Risk Assessment and
+                        Document Authentication
+                    </h3>
+                    <p>
+                        Grant application developed with the research team and
+                        SingleKey Inc., Canada, with a proposed two-year duration.
+                    </p>
+                </article>
+
+                <article class="funding-card">
+                    <div class="meta">NOAMA · 2025 · CAD 60,000 proposed</div>
+                    <h3>
+                        Machine Learning for Serious Causes of Vertigo
+                    </h3>
+                    <p>
+                        Grant proposal developed with the research team and
+                        Health Sciences North, Sudbury, Canada, with a proposed
+                        two-year duration.
+                    </p>
+                </article>
+
+            </div>
         </div>
-
-        <div class="theme-card">
-          <h3>Agentic AI</h3>
-          <p>
-            Intelligent AI systems capable of assessing situations,
-            reasoning about uncertainty, selecting actions, and
-            adapting their behaviour to changing conditions.
-          </p>
-        </div>
-
-        <div class="theme-card">
-          <h3>Privacy-Preserving AI</h3>
-          <p>
-            AI approaches that seek to protect sensitive information
-            while retaining useful representations and predictive
-            capabilities.
-          </p>
-        </div>
-
-        <div class="theme-card">
-          <h3>AI for Real-World Applications</h3>
-          <p>
-            Applied AI research addressing practical challenges in
-            areas such as healthcare, infrastructure, environmental
-            monitoring, and societal systems.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- CURRENT RESEARCH -->
+    <!-- Research Collaboration -->
+    <section>
+        <div class="container collaboration">
 
-  <section class="research-section">
+            <div>
+                <div class="section-number">05 / COLLABORATION</div>
+                <h2>Interdisciplinary & International Collaboration</h2>
 
-    <div class="container">
+                <p>
+                    My research has involved collaborations across universities,
+                    research institutes and industry partners in the UK, Canada,
+                    Germany, France, South Korea, Pakistan and the United States.
+                </p>
 
-      <div class="section-heading">
-        <span class="section-number">02</span>
-        <h2>Current Research</h2>
-      </div>
+                <p>
+                    Current and previous collaborations span AI, machine learning,
+                    computer vision, multimedia analysis, healthcare,
+                    geospatial intelligence and applied research.
+                </p>
+            </div>
 
-      <div class="project-list">
+            <ul class="collaboration-list">
+                <li>
+                    <strong>Ulster University</strong><br>
+                    School of Computing, Belfast, UK
+                </li>
 
-        <div class="project">
+                <li>
+                    <strong>Queen's University</strong><br>
+                    Kingston, Ontario, Canada
+                </li>
 
-          <h3>
-            Decision-Aware Agentic AI for Adaptive Monitoring
-            of Lough Neagh and its Catchment Under Uncertainty
-          </h3>
+                <li>
+                    <strong>GOALs Lab</strong><br>
+                    Queen's University, Canada
+                </li>
 
-          <p>
-            Research into decision-aware AI systems for adaptive
-            environmental monitoring, with an emphasis on uncertainty,
-            information acquisition, decision-making, and
-            quantum-compatible optimisation.
-          </p>
+                <li>
+                    <strong>Fraunhofer Institute for Integrated Circuits</strong><br>
+                    Erlangen, Germany
+                </li>
 
-        </div>
+                <li>
+                    <strong>Georgia Institute of Technology</strong><br>
+                    Human-Augmented Analytics Group, USA
+                </li>
 
+                <li>
+                    <strong>INRIA</strong><br>
+                    STARS Team, Sophia Antipolis, France
+                </li>
 
-        <div class="project">
-
-          <h3>
-            Multimodal AI for Climate-Resilient Environmental Monitoring
-          </h3>
-
-          <p>
-            Developing multimodal AI approaches for environmental
-            monitoring in data-constrained regions, combining
-            heterogeneous sources of information to support
-            resilient decision-making.
-          </p>
+                <li>
+                    <strong>Sejong University</strong><br>
+                    Seoul, South Korea
+                </li>
+            </ul>
 
         </div>
+    </section>
 
 
-        <div class="project">
+    <!-- Research Profile -->
+    <section class="profile-strip">
+        <div class="container">
 
-          <h3>
-            Privacy-Aware Video Question Answering
-          </h3>
+            <div class="profile-grid">
 
-          <p>
-            Research on privacy-aware multimodal VideoQA systems,
-            including privacy-preserving representations, semantic
-            extraction, feature abstraction, and efficient
-            edge-cloud processing.
-          </p>
+                <div class="profile-stat">
+                    <span class="value">15+</span>
+                    <span class="label">
+                        Years of academic and research experience
+                    </span>
+                </div>
+
+                <div class="profile-stat">
+                    <span class="value">60+</span>
+                    <span class="label">
+                        Peer-reviewed research publications
+                    </span>
+                </div>
+
+                <div class="profile-stat">
+                    <span class="value">1,700+</span>
+                    <span class="label">
+                        Research citations
+                    </span>
+                </div>
+
+            </div>
 
         </div>
-
-      </div>
-
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- RESEARCH APPROACH -->
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
 
-  <section class="research-section">
+            <h2>Interested in Research Collaboration?</h2>
 
-    <div class="container">
+            <p>
+                I am interested in interdisciplinary research, industry
+                collaboration, research projects and opportunities to develop
+                applied AI solutions to real-world problems.
+            </p>
 
-      <div class="section-heading">
-        <span class="section-number">03</span>
-        <h2>Research Approach</h2>
-      </div>
+            <a href="contact.html" class="button">
+                Get in Touch
+            </a>
 
-      <p>
-        My research is strongly application-oriented, with an emphasis
-        on translating AI methods into systems that can address
-        practical challenges. This includes working with multimodal
-        data, imperfect or incomplete information, resource
-        constraints, and uncertainty.
-      </p>
-
-      <p>
-        A particular interest is the development of AI systems that do
-        not simply produce predictions, but can also assess the
-        reliability of their predictions and support informed
-        decisions about when to act, seek additional information, or
-        abstain.
-      </p>
-
-      <div class="keywords">
-
-        <span class="keyword">Artificial Intelligence</span>
-        <span class="keyword">Multimodal AI</span>
-        <span class="keyword">Computer Vision</span>
-        <span class="keyword">NLP</span>
-        <span class="keyword">Large Language Models</span>
-        <span class="keyword">Agentic AI</span>
-        <span class="keyword">Edge AI</span>
-        <span class="keyword">Privacy</span>
-        <span class="keyword">Uncertainty</span>
-        <span class="keyword">Responsible AI</span>
-        <span class="keyword">Decision Support</span>
-        <span class="keyword">Quantum AI</span>
-
-      </div>
-
-    </div>
-
-  </section>
+        </div>
+    </section>
 
 
-  <!-- COLLABORATION -->
-
-  <section class="research-section">
-
-    <div class="container">
-
-      <div class="section-heading">
-        <span class="section-number">04</span>
-        <h2>Research Collaboration</h2>
-      </div>
-
-      <p>
-        I am interested in interdisciplinary and international research
-        collaborations involving artificial intelligence, computer
-        vision, multimodal learning, intelligent decision-making,
-        environmental monitoring, and responsible AI.
-      </p>
-
-      <p>
-        If you are interested in discussing a potential research
-        collaboration, joint project, postgraduate research opportunity,
-        or related work, please
-        <a href="./contact.html">get in touch</a>.
-      </p>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <div class="container">
-    © 2026 Dr Naveed Ejaz · Ulster University · Belfast, Northern Ireland
-  </div>
-
-</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner">
+            <span>© 2026 Dr Naveed Ejaz</span>
+            <span>School of Computing · Ulster University</span>
+        </div>
+    </footer>
 
 </body>
 </html>
