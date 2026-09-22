@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>News | Dr Naveed Ejaz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --text: #172033;
+      --heading: #0f172a;
+      --muted: #667085;
+      --line: #e5e7eb;
+      --blue: #1d4ed8;
+      --blue-light: #eff6ff;
+      --soft: #f7f8fa;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .nav-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--heading);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 7px;
+      color: #475467;
+      font-size: 14px;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--blue);
+      background: var(--blue-light);
+    }
+
+    /* Page */
+    .page {
+      min-height: 65vh;
+      padding: 90px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .content {
+      width: 100%;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: clamp(38px, 5vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      color: var(--heading);
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .notice {
+      margin: 35px auto 0;
+      max-width: 620px;
+      padding: 22px 25px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav {
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 60px 0;
+      }
+
+      .nav-links a {
+        padding: 7px 8px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Complete Website Navigation -->
+  <header>
+    <div class="container nav">
+
+      <div class="nav-name">
+        Dr Naveed Ejaz
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="supervision.html">Supervision</a>
+        <a href="news.html" class="active">News</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- News -->
+  <main class="page">
+    <div class="container">
+      <div class="content">
+
+        <h1>News</h1>
+
+        <p>
+          This page will be updated later with research news,
+          academic achievements, projects, publications, awards,
+          conferences, and other professional updates.
+        </p>
+
+        <div class="notice">
+          <strong>News &amp; Updates</strong><br>
+          Content will be added here soon.
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © 2026 Dr Naveed Ejaz · Ulster University · School of Computing · Belfast, Northern Ireland
+    </div>
+  </footer>
+
+</body>
+</html>
