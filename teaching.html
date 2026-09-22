@@ -1,156 +1,1003 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Teaching | Dr Naveed Ejaz</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching | Dr Naveed Ejaz</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --ink:#0f172a;
-      --muted:#475569;
-      --line:#e5e7eb;
-      --card:#ffffff;
-      --bg1:#f6f9ff;
-      --bg2:#fbf7ff;
-      --link:#1d4ed8;
-      --shadow: 0 10px 24px rgba(2,6,23,0.06);
-    }
+    <style>
+        :root {
+            --text: #172033;
+            --muted: #667085;
+            --light: #f7f8fa;
+            --border: #e5e7eb;
+            --accent: #1d4ed8;
+            --accent-light: #eff6ff;
+            --white: #ffffff;
+            --dark: #111827;
+        }
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(1200px 600px at 20% 0%, var(--bg1), transparent 60%),
-        radial-gradient(1200px 600px at 80% 10%, var(--bg2), transparent 55%),
-        #ffffff;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    a{ color:var(--link); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .wrap{
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 34px 20px 70px;
-    }
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
 
-    /* Top navigation */
-    .top{
-      display:flex;
-      justify-content:flex-end;
-      margin-bottom: 28px;
-    }
-    .top nav a{
-      margin-left: 18px;
-      color: var(--muted);
-      font-weight:600;
-      font-size: 0.95rem;
-    }
-    .top nav a:hover{ color: var(--ink); text-decoration:none; }
-    .top nav a.active{ color: var(--ink); }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    h1{
-      margin: 0 0 18px 0;
-      font-size: 2.1rem;
-      font-weight: 850;
-      letter-spacing: 0.04em;
-    }
+        .container {
+            width: min(1120px, 92%);
+            margin: 0 auto;
+        }
 
-    h2{
-      margin: 26px 0 12px 0;
-      font-size: 1.25rem;
-      font-weight: 800;
-    }
+        /* Navigation */
 
-    p{
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 1.05rem;
-      max-width: 75ch;
-    }
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
 
-    .card{
-      margin-top: 18px;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(6px);
-    }
+        .nav-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
 
-    .module{
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .module:last-child{ border-bottom:none; }
+        .brand {
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+        }
 
-    .code{
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-    .title{
-      font-weight: 650;
-    }
-    .term{
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 2px;
-    }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
 
-    @media (max-width: 900px){
-      h1{ font-size: 1.8rem; }
-      p{ font-size: 1rem; }
-    }
-  </style>
+        .nav-links a {
+            color: #475467;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Header */
+
+        .page-header {
+            padding: 95px 0 75px;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .eyebrow {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .page-header h1 {
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        .page-header p {
+            max-width: 820px;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* Sections */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 40px;
+        }
+
+        .section-number {
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 760px;
+        }
+
+        /* Current Teaching */
+
+        .teaching-section {
+            background: var(--light);
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .module-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease,
+                        border-color 0.2s ease;
+        }
+
+        .module-card:hover {
+            transform: translateY(-3px);
+            border-color: #cbd5e1;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .module-code {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+
+        .module-card h3 {
+            font-size: 20px;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .module-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Teaching Experience */
+
+        .experience-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .experience-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px 30px;
+            background: var(--white);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 25px;
+            margin-bottom: 12px;
+        }
+
+        .experience-header h3 {
+            font-size: 20px;
+            line-height: 1.35;
+        }
+
+        .location {
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .experience-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .experience-card ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #475467;
+            font-size: 14px;
+        }
+
+        .experience-card li {
+            margin-bottom: 6px;
+        }
+
+        /* Modules */
+
+        .modules-section {
+            background: var(--light);
+        }
+
+        .module-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .module-group {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 26px;
+        }
+
+        .module-group h3 {
+            font-size: 19px;
+            margin-bottom: 18px;
+        }
+
+        .module-item {
+            padding: 11px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            color: #475467;
+        }
+
+        .module-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .module-item strong {
+            color: var(--text);
+        }
+
+        /* Curriculum */
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .curriculum-card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .curriculum-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .curriculum-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .curriculum-card ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #475467;
+            font-size: 14px;
+        }
+
+        .curriculum-card li {
+            margin-bottom: 7px;
+        }
+
+        /* Teaching Approach */
+
+        .approach {
+            background: var(--dark);
+            color: white;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .approach h2 {
+            font-size: 34px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+        }
+
+        .approach p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .approach-list {
+            display: grid;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .approach-list li {
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 10px;
+            padding: 16px 18px;
+            color: #e5e7eb;
+            font-size: 14px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        /* CTA */
+
+        .contact-cta {
+            text-align: center;
+            padding: 85px 0;
+        }
+
+        .contact-cta h2 {
+            font-size: 34px;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .contact-cta p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .button:hover {
+            background: #1e40af;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .module-grid,
+            .module-list,
+            .curriculum-grid,
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav-inner {
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px 18px;
+            }
+
+            .page-header {
+                padding: 65px 0 55px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .location {
+                white-space: normal;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="wrap">
 
-    <!-- TOP RIGHT NAV -->
-    <div class="top">
-      <nav aria-label="Primary">
-        <a href="./">Home</a>
-        <a href="./research.html">Research</a>
-        <a href="./publications.html">Publications</a>
-        <a class="active" href="./teaching.html">Teaching</a>
-      </nav>
-    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand">Dr Naveed Ejaz</a>
 
-    <h1>Teaching</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="teaching.html" class="active">Teaching</a></li>
+                <li><a href="supervision.html">Supervision</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <p>
-      I teach undergraduate and postgraduate modules in computer science, artificial intelligence,
-      and applied computing, with an emphasis on practical skills and real-world problem solving.
-    </p>
 
-    <div class="card">
-      <h2>Spring 2026</h2>
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="eyebrow">Teaching</div>
 
-      <div class="module">
-        <div class="code">COM431</div>
-        <div class="title">Server Side Development</div>
-      </div>
+            <h1>Teaching & Academic Experience</h1>
 
-      <div class="module">
-        <div class="code">COM672</div>
-        <div class="title">Artificial Intelligence and Computer Vision</div>
-      </div>
+            <p>
+                I have taught undergraduate and postgraduate computing courses
+                across artificial intelligence, machine learning, computer vision,
+                data science, programming, algorithms and related areas.
+            </p>
+        </div>
+    </header>
 
-      <div class="module">
-        <div class="code">COM117</div>
-        <div class="title">Introduction to Physical Computing</div>
-      </div>
-    </div>
 
-  </div>
+    <!-- Current Teaching -->
+    <section class="teaching-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">01 / CURRENT TEACHING</div>
+                <h2>Teaching at Ulster University</h2>
+                <p>
+                    Current teaching and module coordination within the School
+                    of Computing, Ulster University, Belfast.
+                </p>
+            </div>
+
+            <div class="module-grid">
+
+                <article class="module-card">
+                    <span class="module-code">COM431</span>
+                    <h3>Server-Side Development</h3>
+                    <p>
+                        Server-side web development, practical software
+                        development and application-oriented programming.
+                    </p>
+                </article>
+
+                <article class="module-card">
+                    <span class="module-code">COM672</span>
+                    <h3>Computer Vision and AI</h3>
+                    <p>
+                        Artificial intelligence and computer vision concepts,
+                        methods and practical applications.
+                    </p>
+                </article>
+
+                <article class="module-card">
+                    <span class="module-code">COM117</span>
+                    <h3>Introduction to Physical Computing</h3>
+                    <p>
+                        Foundations of physical computing and practical
+                        interaction between software and computing hardware.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Teaching Experience -->
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">02 / TEACHING EXPERIENCE</div>
+                <h2>Academic Teaching Experience</h2>
+                <p>
+                    Teaching experience across universities in the UK, Canada,
+                    Pakistan, Saudi Arabia and South Korea.
+                </p>
+            </div>
+
+            <div class="experience-list">
+
+                <article class="experience-card">
+                    <div class="experience-header">
+                        <h3>Ulster University</h3>
+                        <span class="location">Belfast, UK</span>
+                    </div>
+
+                    <p>
+                        School of Computing · 2025–Present
+                    </p>
+
+                    <ul>
+                        <li>
+                            Teaching undergraduate and postgraduate computing
+                            modules.
+                        </li>
+                        <li>
+                            Module coordination including delivery, assessment
+                            and academic administration.
+                        </li>
+                        <li>
+                            Supporting student learning and supervising projects.
+                        </li>
+                    </ul>
+                </article>
+
+
+                <article class="experience-card">
+                    <div class="experience-header">
+                        <h3>Queen's University</h3>
+                        <span class="location">Kingston, Canada</span>
+                    </div>
+
+                    <p>
+                        School of Computing · 2022–2025
+                    </p>
+
+                    <ul>
+                        <li>
+                            Supervised undergraduate and graduate students on
+                            research and applied AI projects.
+                        </li>
+                        <li>
+                            Supported research and student project development
+                            across AI and related computing areas.
+                        </li>
+                    </ul>
+                </article>
+
+
+                <article class="experience-card">
+                    <div class="experience-header">
+                        <h3>Iqra University</h3>
+                        <span class="location">Islamabad, Pakistan</span>
+                    </div>
+
+                    <p>
+                        Department of Computing & Technology · 2018–2022
+                    </p>
+
+                    <ul>
+                        <li>
+                            Taught undergraduate and postgraduate courses.
+                        </li>
+                        <li>
+                            Supervised BS, MS and PhD students.
+                        </li>
+                        <li>
+                            Developed and updated curricula in response to
+                            emerging technologies and industry requirements.
+                        </li>
+                        <li>
+                            Led the development and introduction of the BS
+                            Artificial Intelligence programme.
+                        </li>
+                    </ul>
+                </article>
+
+
+                <article class="experience-card">
+                    <div class="experience-header">
+                        <h3>Majmaah University</h3>
+                        <span class="location">Saudi Arabia</span>
+                    </div>
+
+                    <p>
+                        Department of Computer Science · 2014–2016
+                    </p>
+
+                    <ul>
+                        <li>
+                            Taught undergraduate computing courses.
+                        </li>
+                        <li>
+                            Contributed to departmental quality assurance
+                            activities.
+                        </li>
+                        <li>
+                            Served as Head of the Multimedia and Image
+                            Processing Research Group.
+                        </li>
+                    </ul>
+                </article>
+
+
+                <article class="experience-card">
+                    <div class="experience-header">
+                        <h3>National University of Computer & Emerging Sciences</h3>
+                        <span class="location">Islamabad, Pakistan</span>
+                    </div>
+
+                    <p>
+                        Department of Computer Science · 2007–2014
+                    </p>
+
+                    <ul>
+                        <li>
+                            Taught undergraduate computer science courses across
+                            core computing areas.
+                        </li>
+                        <li>
+                            Coordinated laboratory teaching activities.
+                        </li>
+                        <li>
+                            Served as Final Year Project Coordinator.
+                        </li>
+                    </ul>
+                </article>
+
+
+                <article class="experience-card">
+                    <div class="experience-header">
+                        <h3>Sejong University</h3>
+                        <span class="location">Seoul, South Korea</span>
+                    </div>
+
+                    <p>
+                        Department of Computer Science
+                    </p>
+
+                    <ul>
+                        <li>
+                            Taught Introduction to Programming.
+                        </li>
+                        <li>
+                            Taught Introduction to Database Management Systems.
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modules -->
+    <section class="modules-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">03 / MODULES TAUGHT</div>
+                <h2>Selected Teaching Portfolio</h2>
+                <p>
+                    Modules taught across different academic institutions and
+                    levels.
+                </p>
+            </div>
+
+            <div class="module-list">
+
+                <div class="module-group">
+                    <h3>Artificial Intelligence & Data</h3>
+
+                    <div class="module-item">
+                        <strong>Machine Learning</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Artificial Intelligence</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Introduction to Data Science</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Natural Language Processing</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Data Mining</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Decision Support Systems</strong>
+                    </div>
+                </div>
+
+
+                <div class="module-group">
+                    <h3>Computer Vision & Multimedia</h3>
+
+                    <div class="module-item">
+                        <strong>Computer Vision</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Advanced Digital Image Processing</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Digital Image Processing</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Multimedia-related Computing</strong>
+                    </div>
+                </div>
+
+
+                <div class="module-group">
+                    <h3>Programming & Software</h3>
+
+                    <div class="module-item">
+                        <strong>Server-Side Development</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Introduction to Programming</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Programming for Engineers</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Introduction to Information and Communication Technologies</strong>
+                    </div>
+                </div>
+
+
+                <div class="module-group">
+                    <h3>Core Computing</h3>
+
+                    <div class="module-item">
+                        <strong>Data Structures and Algorithms</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Advanced Design and Analysis of Algorithms</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Operating Systems</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Computer Organization and Assembly Language</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Distributed and Parallel Systems</strong>
+                    </div>
+
+                    <div class="module-item">
+                        <strong>Formal Languages and Automata Theory</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Curriculum Development -->
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="section-number">04 / CURRICULUM DEVELOPMENT</div>
+                <h2>Curriculum & Programme Development</h2>
+                <p>
+                    Experience designing and updating computing curricula in
+                    response to emerging technologies, industry needs and
+                    academic requirements.
+                </p>
+            </div>
+
+            <div class="curriculum-grid">
+
+                <article class="curriculum-card">
+                    <h3>Introduction to Data Science</h3>
+
+                    <p>
+                        Designed curriculum with hands-on projects using
+                        Python, Pandas and Matplotlib.
+                    </p>
+
+                    <ul>
+                        <li>Data wrangling</li>
+                        <li>Data visualisation</li>
+                        <li>Data analysis</li>
+                        <li>Practical project-based learning</li>
+                    </ul>
+                </article>
+
+
+                <article class="curriculum-card">
+                    <h3>Machine Learning</h3>
+
+                    <p>
+                        Updated the syllabus to incorporate key machine learning
+                        algorithms, model evaluation and practical applications.
+                    </p>
+
+                    <ul>
+                        <li>Machine learning algorithms</li>
+                        <li>Model evaluation</li>
+                        <li>Practical applications</li>
+                        <li>Scikit-learn and TensorFlow</li>
+                    </ul>
+                </article>
+
+
+                <article class="curriculum-card">
+                    <h3>BS Artificial Intelligence Programme</h3>
+
+                    <p>
+                        Led the development and introduction of the BS Artificial
+                        Intelligence programme at Iqra University.
+                    </p>
+
+                    <ul>
+                        <li>Programme curriculum development</li>
+                        <li>Academic programme planning</li>
+                        <li>Accreditation process</li>
+                    </ul>
+                </article>
+
+
+                <article class="curriculum-card">
+                    <h3>Academic Quality & Development</h3>
+
+                    <p>
+                        Contributed to curriculum review, quality assurance and
+                        academic development activities across previous
+                        institutions.
+                    </p>
+
+                    <ul>
+                        <li>Curriculum review</li>
+                        <li>Quality assurance</li>
+                        <li>Course specification review</li>
+                        <li>Laboratory learning outcomes</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Teaching Approach -->
+    <section class="approach">
+        <div class="container approach-grid">
+
+            <div>
+                <div class="section-number">05 / TEACHING APPROACH</div>
+
+                <h2>
+                    Practical, Applied and Student-Centred Learning
+                </h2>
+
+                <p>
+                    My teaching experience combines theoretical foundations
+                    with practical computing skills, project-based learning
+                    and applications of emerging technologies.
+                </p>
+            </div>
+
+            <ul class="approach-list">
+                <li>
+                    Practical programming and hands-on computing activities
+                </li>
+
+                <li>
+                    Project-based learning and real-world applications
+                </li>
+
+                <li>
+                    Integration of emerging AI and data technologies
+                </li>
+
+                <li>
+                    Constructive alignment of teaching, learning outcomes
+                    and assessment
+                </li>
+
+                <li>
+                    Inclusive and student-centred teaching practices
+                </li>
+
+                <li>
+                    Supporting diverse learners and accessible learning
+                    environments
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+
+    <!-- Contact CTA -->
+    <section class="contact-cta">
+        <div class="container">
+
+            <h2>Academic & Teaching Enquiries</h2>
+
+            <p>
+                For teaching collaboration, academic development or related
+                enquiries, please get in touch.
+            </p>
+
+            <a href="contact.html" class="button">
+                Contact Me
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-inner">
+            <span>© 2026 Dr Naveed Ejaz</span>
+            <span>School of Computing · Ulster University</span>
+        </div>
+    </footer>
+
 </body>
 </html>
