@@ -8,7 +8,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     :root {
@@ -55,6 +58,7 @@
     }
 
     /* Navigation */
+
     header {
       border-bottom: 1px solid var(--line);
       background: rgba(255, 255, 255, 0.96);
@@ -65,7 +69,7 @@
     }
 
     .nav {
-      height: 72px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,18 +80,20 @@
       font-weight: 750;
       color: var(--heading);
       letter-spacing: -0.02em;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 26px;
+      gap: 22px;
       align-items: center;
     }
 
     .nav-links a {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -108,6 +114,7 @@
     }
 
     /* Hero */
+
     .hero {
       padding: 70px 0 55px;
     }
@@ -157,6 +164,7 @@
     }
 
     /* Photo */
+
     .photo {
       width: 210px;
       height: 210px;
@@ -175,6 +183,7 @@
     }
 
     /* Email */
+
     .email {
       display: inline-flex;
       align-items: center;
@@ -193,7 +202,8 @@
       text-decoration: none;
     }
 
-    /* Research areas */
+    /* Sections */
+
     .section {
       padding: 42px 0;
       border-top: 1px solid var(--line);
@@ -206,6 +216,8 @@
       color: var(--heading);
       letter-spacing: -0.02em;
     }
+
+    /* Research */
 
     .research-grid {
       display: grid;
@@ -229,6 +241,7 @@
     }
 
     /* Academic links */
+
     .academic-links {
       display: flex;
       flex-wrap: wrap;
@@ -253,6 +266,7 @@
     }
 
     /* Footer */
+
     footer {
       border-top: 1px solid var(--line);
       margin-top: 30px;
@@ -261,19 +275,28 @@
       font-size: 0.84rem;
     }
 
-    /* Mobile */
-    @media (max-width: 800px) {
+    /* Responsive */
 
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 15px;
+      }
+
+      .nav-links a {
+        font-size: 0.84rem;
+      }
+    }
+
+    @media (max-width: 800px) {
       .nav {
         height: auto;
-        min-height: 68px;
         padding: 14px 0;
         align-items: flex-start;
         gap: 12px;
       }
 
       .nav-links {
-        gap: 13px;
+        gap: 12px;
         flex-wrap: wrap;
         justify-content: flex-end;
       }
@@ -306,8 +329,7 @@
       }
     }
 
-    @media (max-width: 500px) {
-
+    @media (max-width: 600px) {
       .container {
         padding: 0 20px;
       }
@@ -322,6 +344,10 @@
 
       .nav-links {
         justify-content: center;
+      }
+
+      .nav-links a {
+        font-size: 0.82rem;
       }
 
       .hero {
@@ -353,6 +379,8 @@
       <a href="./research.html">Research</a>
       <a href="./publications.html">Publications</a>
       <a href="./teaching.html">Teaching</a>
+      <a href="./supervision.html">Supervision</a>
+      <a href="./news.html">News</a>
       <a href="./contact.html" class="contact-link">Contact</a>
     </nav>
 
@@ -363,6 +391,7 @@
 <main>
 
   <!-- HERO -->
+
   <section class="hero">
     <div class="container">
 
@@ -380,8 +409,11 @@
 
           <p class="position">
             <strong>Lecturer in Computing</strong><br>
-            School of Computing, 
-            <a href="https://www.ulster.ac.uk/" target="_blank" rel="noopener">
+            School of Computing,
+            <a
+              href="https://www.ulster.ac.uk/"
+              target="_blank"
+              rel="noopener">
               Ulster University
             </a>
             <br>
@@ -389,16 +421,21 @@
           </p>
 
           <p class="intro">
-            My research focuses on <strong>applied artificial intelligence</strong>,
-            with particular interests in <strong>multimodal AI, computer vision,
-            natural language processing, responsible AI, and intelligent
-            decision-making</strong>. My work explores the development of
-            AI systems that can operate reliably in real-world environments,
-            with an emphasis on practical deployment, uncertainty, privacy,
-            and societal impact.
+            My research focuses on
+            <strong>applied artificial intelligence</strong>,
+            with particular interests in
+            <strong>multimodal AI, computer vision,
+            natural language processing, responsible AI,
+            and intelligent decision-making</strong>.
+            My work explores the development of AI systems
+            that can operate reliably in real-world environments,
+            with an emphasis on practical deployment,
+            uncertainty, privacy, and societal impact.
           </p>
 
-          <a class="email" href="mailto:n.ejaz@ulster.ac.uk">
+          <a
+            class="email"
+            href="mailto:n.ejaz@ulster.ac.uk">
             ✉ &nbsp; n.ejaz@ulster.ac.uk
           </a>
 
@@ -408,8 +445,7 @@
         <div class="photo">
           <img
             src="assets/images/ChatGPT Image Sep 22, 2026, 10_51_58 AM.png"
-            alt="Dr Naveed Ejaz"
-          >
+            alt="Dr Naveed Ejaz">
         </div>
 
       </div>
@@ -419,6 +455,7 @@
 
 
   <!-- RESEARCH AREAS -->
+
   <section class="section">
     <div class="container">
 
@@ -466,7 +503,8 @@
   </section>
 
 
-  <!-- ACADEMIC LINKS -->
+  <!-- ACADEMIC PROFILES -->
+
   <section class="section">
     <div class="container">
 
