@@ -1,11 +1,10 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Dr Naveed Ejaz | Academic Profile</title>
+  <title>Research | Dr Naveed Ejaz</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,14 +15,14 @@
 
   <style>
     :root {
-      --ink: #172033;
       --heading: #0f172a;
+      --ink: #172033;
       --muted: #5b6575;
       --line: #e5e7eb;
       --blue: #1d4ed8;
       --blue-light: #eff6ff;
-      --bg: #ffffff;
       --soft: #f8fafc;
+      --white: #ffffff;
     }
 
     * {
@@ -39,8 +38,8 @@
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
                    "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
+      background: var(--white);
+      line-height: 1.7;
     }
 
     a {
@@ -62,7 +61,7 @@
 
     header {
       border-bottom: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -102,6 +101,10 @@
       text-decoration: none;
     }
 
+    .nav-links .active {
+      color: var(--heading);
+    }
+
     .nav-links .contact-link {
       background: var(--heading);
       color: white;
@@ -114,161 +117,174 @@
       opacity: 0.9;
     }
 
-    /* Hero */
+    /* Page header */
 
-    .hero {
-      padding: 70px 0 55px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 230px;
-      gap: 70px;
-      align-items: center;
+    .page-header {
+      padding: 70px 0 45px;
+      border-bottom: 1px solid var(--line);
     }
 
     .eyebrow {
+      margin-bottom: 12px;
+      color: var(--blue);
       font-size: 0.82rem;
       font-weight: 750;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--blue);
-      margin-bottom: 14px;
     }
 
     h1 {
       margin: 0;
       color: var(--heading);
-      font-size: 3.1rem;
-      line-height: 1.08;
+      font-size: 3rem;
+      line-height: 1.1;
       letter-spacing: -0.045em;
       font-weight: 800;
     }
 
-    .position {
-      margin: 17px 0 0;
-      font-size: 1.08rem;
+    .page-intro {
+      max-width: 780px;
+      margin: 20px 0 0;
       color: var(--muted);
-      line-height: 1.6;
+      font-size: 1.06rem;
+      line-height: 1.8;
     }
 
-    .position strong {
+    /* Main content */
+
+    main {
+      padding-bottom: 55px;
+    }
+
+    .research-section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .research-section:last-child {
+      border-bottom: none;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-number {
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+    }
+
+    h2 {
+      margin: 0;
       color: var(--heading);
+      font-size: 1.55rem;
+      line-height: 1.3;
+      letter-spacing: -0.025em;
     }
 
-    .intro {
-      max-width: 720px;
-      margin: 26px 0 0;
-      font-size: 1.05rem;
-      line-height: 1.85;
+    .research-section p {
+      max-width: 850px;
+      margin: 0 0 16px;
       color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
     }
 
-    /* Photo */
+    .research-section p:last-child {
+      margin-bottom: 0;
+    }
 
-    .photo {
-      width: 210px;
-      height: 210px;
-      margin: 0 auto;
-      border-radius: 14px;
-      overflow: hidden;
+    /* Research themes */
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .theme-card {
+      padding: 22px;
       border: 1px solid var(--line);
-      background: var(--soft);
+      border-radius: 10px;
+      background: var(--white);
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .theme-card:hover {
+      border-color: #bfdbfe;
+      transform: translateY(-2px);
     }
 
-    /* Email */
+    .theme-card h3 {
+      margin: 0 0 8px;
+      color: var(--heading);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
 
-    .email {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: 24px;
-      padding: 10px 15px;
-      border: 1px solid #dbe4f0;
+    .theme-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    /* Current projects */
+
+    .project-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .project {
+      padding: 21px 23px;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--blue);
       border-radius: 8px;
       background: var(--soft);
-      font-size: 0.94rem;
-      font-weight: 650;
     }
 
-    .email:hover {
-      background: var(--blue-light);
-      text-decoration: none;
-    }
-
-    /* Research */
-
-    .section {
-      padding: 42px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-title {
-      margin: 0 0 20px;
-      font-size: 1.25rem;
-      font-weight: 750;
+    .project h3 {
+      margin: 0 0 7px;
       color: var(--heading);
-      letter-spacing: -0.02em;
+      font-size: 1rem;
+      line-height: 1.45;
     }
 
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+    .project p {
+      margin: 0;
+      font-size: 0.93rem;
     }
 
-    .research-card {
-      padding: 19px;
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      background: white;
-      font-size: 0.94rem;
-      font-weight: 650;
-      color: var(--heading);
-    }
+    /* Keywords */
 
-    .research-card:hover {
-      border-color: #bfdbfe;
-      background: #f8fbff;
-    }
-
-    /* Academic links */
-
-    .academic-links {
+    .keywords {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 9px;
+      margin-top: 24px;
     }
 
-    .academic-links a {
-      display: inline-block;
-      padding: 9px 15px;
-      border: 1px solid var(--line);
-      border-radius: 7px;
+    .keyword {
+      padding: 7px 12px;
+      border: 1px solid #dbe4f0;
+      border-radius: 999px;
+      background: var(--soft);
       color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 650;
-      background: white;
-    }
-
-    .academic-links a:hover {
-      color: var(--blue);
-      border-color: #bfdbfe;
-      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 600;
     }
 
     /* Footer */
 
     footer {
       border-top: 1px solid var(--line);
-      margin-top: 30px;
       padding: 28px 0 38px;
       color: var(--muted);
       font-size: 0.84rem;
@@ -277,7 +293,6 @@
     /* Responsive */
 
     @media (max-width: 1000px) {
-
       .nav-links {
         gap: 15px;
       }
@@ -288,7 +303,6 @@
     }
 
     @media (max-width: 800px) {
-
       .nav {
         height: auto;
         padding: 14px 0;
@@ -306,32 +320,20 @@
         padding: 6px 10px;
       }
 
-      .hero {
-        padding: 48px 0 40px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-
-      .photo {
-        order: -1;
-        width: 170px;
-        height: 170px;
+      .page-header {
+        padding: 50px 0 38px;
       }
 
       h1 {
         font-size: 2.35rem;
       }
 
-      .research-grid {
-        grid-template-columns: 1fr 1fr;
+      .theme-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 600px) {
-
       .container {
         padding: 0 20px;
       }
@@ -352,16 +354,16 @@
         font-size: 0.82rem;
       }
 
-      .hero {
-        padding-top: 35px;
+      .page-header {
+        padding-top: 38px;
       }
 
       h1 {
         font-size: 2rem;
       }
 
-      .research-grid {
-        grid-template-columns: 1fr;
+      .research-section {
+        padding: 38px 0;
       }
     }
   </style>
@@ -370,7 +372,6 @@
 <body>
 
 <header>
-
   <div class="container nav">
 
     <div class="nav-name">
@@ -381,7 +382,7 @@
 
       <a href="./">Home</a>
 
-      <a href="./research.html">
+      <a href="./research.html" class="active">
         Research
       </a>
 
@@ -408,80 +409,189 @@
     </nav>
 
   </div>
-
 </header>
 
 
 <main>
 
-  <!-- HERO -->
+  <!-- PAGE HEADER -->
 
-  <section class="hero">
+  <section class="page-header">
 
     <div class="container">
 
-      <div class="hero-grid">
+      <div class="eyebrow">
+        Research
+      </div>
 
-        <div>
+      <h1>
+        Research &amp; Innovation
+      </h1>
 
-          <div class="eyebrow">
-            Academic Profile
-          </div>
+      <p class="page-intro">
+        My research focuses on the development and application of
+        artificial intelligence for real-world problems, with particular
+        interests in multimodal AI, computer vision, natural language
+        processing, responsible AI, and intelligent decision-making.
+        I am particularly interested in AI systems that can operate
+        reliably in complex, uncertain, and data-constrained environments.
+      </p>
 
-          <h1>
-            Dr Naveed Ejaz
-          </h1>
+    </div>
 
-          <p class="position">
-            <strong>Lecturer in Computing</strong><br>
+  </section>
 
-            School of Computing,
-            <a
-              href="https://www.ulster.ac.uk/"
-              target="_blank"
-              rel="noopener">
-              Ulster University
-            </a>
 
-            <br>
+  <!-- RESEARCH THEMES -->
 
-            Belfast, Northern Ireland, UK
+  <section class="research-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <h2>Research Themes</h2>
+      </div>
+
+      <div class="theme-grid">
+
+        <div class="theme-card">
+          <h3>Multimodal Artificial Intelligence</h3>
+          <p>
+            AI systems that integrate and reason across multiple
+            modalities, including vision, language, video, and other
+            forms of contextual information.
           </p>
+        </div>
 
-
-          <p class="intro">
-
-            My research focuses on
-            <strong>applied artificial intelligence</strong>,
-            with particular interests in
-            <strong>multimodal AI, computer vision,
-            natural language processing, responsible AI,
-            and intelligent decision-making</strong>.
-
-            My work explores the development of AI systems
-            that can operate reliably in real-world environments,
-            with an emphasis on practical deployment,
-            uncertainty, privacy, and societal impact.
-
+        <div class="theme-card">
+          <h3>Computer Vision</h3>
+          <p>
+            Visual understanding, recognition, detection, and analysis
+            for practical applications and challenging real-world
+            environments.
           </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Natural Language Processing &amp; LLMs</h3>
+          <p>
+            Language-based AI, large language models, multimodal
+            language understanding, and their application to
+            intelligent systems.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Responsible &amp; Trustworthy AI</h3>
+          <p>
+            Developing AI systems with greater emphasis on privacy,
+            reliability, transparency, uncertainty, and responsible
+            deployment.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Edge &amp; Cloud AI</h3>
+          <p>
+            Distributed AI architectures that balance computational
+            resources, latency, privacy, communication costs, and
+            real-world deployment requirements.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Agentic AI</h3>
+          <p>
+            Intelligent AI systems capable of assessing situations,
+            reasoning about uncertainty, selecting actions, and
+            adapting their behaviour to changing conditions.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Privacy-Preserving AI</h3>
+          <p>
+            AI approaches that seek to protect sensitive information
+            while retaining useful representations and predictive
+            capabilities.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>AI for Real-World Applications</h3>
+          <p>
+            Applied AI research addressing practical challenges in
+            areas such as healthcare, infrastructure, environmental
+            monitoring, and societal systems.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-          <a
-            class="email"
-            href="mailto:n.ejaz@ulster.ac.uk">
+  <!-- CURRENT RESEARCH -->
 
-            ✉ &nbsp; n.ejaz@ulster.ac.uk
+  <section class="research-section">
 
-          </a>
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <h2>Current Research</h2>
+      </div>
+
+      <div class="project-list">
+
+        <div class="project">
+
+          <h3>
+            Decision-Aware Agentic AI for Adaptive Monitoring
+            of Lough Neagh and its Catchment Under Uncertainty
+          </h3>
+
+          <p>
+            Research into decision-aware AI systems for adaptive
+            environmental monitoring, with an emphasis on uncertainty,
+            information acquisition, decision-making, and
+            quantum-compatible optimisation.
+          </p>
 
         </div>
 
 
-        <div class="photo">
+        <div class="project">
 
-          <img
-            src="assets/images/ChatGPT Image Sep 22, 2026, 10_51_58 AM.png"
-            alt="Dr Naveed Ejaz">
+          <h3>
+            Multimodal AI for Climate-Resilient Environmental Monitoring
+          </h3>
+
+          <p>
+            Developing multimodal AI approaches for environmental
+            monitoring in data-constrained regions, combining
+            heterogeneous sources of information to support
+            resilient decision-making.
+          </p>
+
+        </div>
+
+
+        <div class="project">
+
+          <h3>
+            Privacy-Aware Video Question Answering
+          </h3>
+
+          <p>
+            Research on privacy-aware multimodal VideoQA systems,
+            including privacy-preserving representations, semantic
+            extraction, feature abstraction, and efficient
+            edge-cloud processing.
+          </p>
 
         </div>
 
@@ -492,50 +602,47 @@
   </section>
 
 
-  <!-- RESEARCH AREAS -->
+  <!-- RESEARCH APPROACH -->
 
-  <section class="section">
+  <section class="research-section">
 
     <div class="container">
 
-      <h2 class="section-title">
-        Research Areas
-      </h2>
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <h2>Research Approach</h2>
+      </div>
 
+      <p>
+        My research is strongly application-oriented, with an emphasis
+        on translating AI methods into systems that can address
+        practical challenges. This includes working with multimodal
+        data, imperfect or incomplete information, resource
+        constraints, and uncertainty.
+      </p>
 
-      <div class="research-grid">
+      <p>
+        A particular interest is the development of AI systems that do
+        not simply produce predictions, but can also assess the
+        reliability of their predictions and support informed
+        decisions about when to act, seek additional information, or
+        abstain.
+      </p>
 
-        <div class="research-card">
-          Multimodal Artificial Intelligence
-        </div>
+      <div class="keywords">
 
-        <div class="research-card">
-          Computer Vision
-        </div>
-
-        <div class="research-card">
-          Natural Language Processing &amp; LLMs
-        </div>
-
-        <div class="research-card">
-          Responsible &amp; Trustworthy AI
-        </div>
-
-        <div class="research-card">
-          Edge &amp; Cloud AI
-        </div>
-
-        <div class="research-card">
-          Agentic AI
-        </div>
-
-        <div class="research-card">
-          Privacy-Preserving AI
-        </div>
-
-        <div class="research-card">
-          AI for Real-World Applications
-        </div>
+        <span class="keyword">Artificial Intelligence</span>
+        <span class="keyword">Multimodal AI</span>
+        <span class="keyword">Computer Vision</span>
+        <span class="keyword">NLP</span>
+        <span class="keyword">Large Language Models</span>
+        <span class="keyword">Agentic AI</span>
+        <span class="keyword">Edge AI</span>
+        <span class="keyword">Privacy</span>
+        <span class="keyword">Uncertainty</span>
+        <span class="keyword">Responsible AI</span>
+        <span class="keyword">Decision Support</span>
+        <span class="keyword">Quantum AI</span>
 
       </div>
 
@@ -544,56 +651,30 @@
   </section>
 
 
-  <!-- ACADEMIC PROFILES -->
+  <!-- COLLABORATION -->
 
-  <section class="section">
+  <section class="research-section">
 
     <div class="container">
 
-      <h2 class="section-title">
-        Academic Profiles
-      </h2>
-
-
-      <div class="academic-links">
-
-        <a
-          href="https://scholar.google.ca/citations?user=EWORmh8AAAAJ&hl=en"
-          target="_blank"
-          rel="noopener">
-          Google Scholar
-        </a>
-
-        <a
-          href="https://orcid.org/"
-          target="_blank"
-          rel="noopener">
-          ORCID
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/naveed-ejaz/"
-          target="_blank"
-          rel="noopener">
-          LinkedIn
-        </a>
-
-        <a
-          href="https://www.ulster.ac.uk/"
-          target="_blank"
-          rel="noopener">
-          Ulster University
-        </a>
-
-        <a href="./publications.html">
-          Publications
-        </a>
-
-        <a href="./research.html">
-          Research
-        </a>
-
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <h2>Research Collaboration</h2>
       </div>
+
+      <p>
+        I am interested in interdisciplinary and international research
+        collaborations involving artificial intelligence, computer
+        vision, multimodal learning, intelligent decision-making,
+        environmental monitoring, and responsible AI.
+      </p>
+
+      <p>
+        If you are interested in discussing a potential research
+        collaboration, joint project, postgraduate research opportunity,
+        or related work, please
+        <a href="./contact.html">get in touch</a>.
+      </p>
 
     </div>
 
@@ -605,14 +686,10 @@
 <footer>
 
   <div class="container">
-
     © 2026 Dr Naveed Ejaz · Ulster University · Belfast, Northern Ireland
-
   </div>
 
 </footer>
 
 </body>
 </html>
-```
-
